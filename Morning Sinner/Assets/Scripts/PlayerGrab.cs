@@ -86,7 +86,9 @@ public class PlayerGrab : MonoBehaviour
                 GameObject hitObject = hit.transform.gameObject;
                 if(hitObject.layer == LayerMask.NameToLayer("Interactables"))
                 {
-                    DialogueManager.instance.testDialogueBox.gameObject.SetActive(!DialogueManager.instance.testDialogueBox.activeInHierarchy);
+                    //DialogueManager.instance.testDialogueBox.gameObject.SetActive(!DialogueManager.instance.testDialogueBox.activeInHierarchy);
+                    DialogueTrigger trigger = hitObject.gameObject.GetComponent<DialogueTrigger>();
+                    trigger.triggerDialogue();
                 }
             }
         }
