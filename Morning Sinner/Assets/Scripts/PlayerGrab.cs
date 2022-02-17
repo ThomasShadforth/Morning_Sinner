@@ -77,18 +77,22 @@ public class PlayerGrab : MonoBehaviour
 
     void checkForInteraction()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (!DialogueManager.instance.dialogueInProg)
         {
-            RaycastHit hit;
-            Ray ray = new Ray(transform.position, Vector3.right * rayDistance * transform.localScale.x);
-            if(Physics.Raycast(ray, out hit))
+            if (Input.GetButtonDown("Fire2"))
             {
-                GameObject hitObject = hit.transform.gameObject;
-                if(hitObject.layer == LayerMask.NameToLayer("Interactables"))
+                RaycastHit hit;
+                Ray ray = new Ray(transform.position, Vector3.right * rayDistance * transform.localScale.x);
+                if (Physics.Raycast(ray, out hit))
                 {
-                    //DialogueManager.instance.testDialogueBox.gameObject.SetActive(!DialogueManager.instance.testDialogueBox.activeInHierarchy);
-                    DialogueTrigger trigger = hitObject.gameObject.GetComponent<DialogueTrigger>();
-                    trigger.triggerDialogue();
+                    GameObject hitObject = hit.transform.gameObject;
+                    if (hitObject.layer == LayerMask.NameToLayer("Interactables"))
+                    {
+
+                        //DialogueManager.instance.testDialogueBox.gameObject.SetActive(!DialogueManager.instance.testDialogueBox.activeInHierarchy);
+                        DialogueTrigger trigger = hitObject.gameObject.GetComponent<DialogueTrigger>();
+                        trigger.triggerDialogue();
+                    }
                 }
             }
         }

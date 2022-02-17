@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Animator animator;
     
     DialogueTrigger dialogueTrig;
-
+    public bool dialogueInProg;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     public void startDialogue(dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
-
+        dialogueInProg = true;
         nameText.text = dialogue.name;
         sentences.Clear(); //Clears the sentences queue for new dialogue
 
@@ -81,7 +81,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("isOpen", false);
-
+        dialogueInProg = false;
 
     }
 }
