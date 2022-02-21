@@ -328,7 +328,7 @@ public class DialogueGraphView : GraphView
         {
             DialogueGroup dialogueGroup = (DialogueGroup)group;
 
-            dialogueGroup.title = newTitle.RemoveWhitespaces();
+            dialogueGroup.title = newTitle.RemoveWhitespaces().RemoveSpecialCharacters();
 
             RemoveGroup(dialogueGroup);
 
