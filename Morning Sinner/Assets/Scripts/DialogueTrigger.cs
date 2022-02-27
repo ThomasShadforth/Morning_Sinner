@@ -10,6 +10,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (!interactedYet)
         {
+            Debug.Log("TRIGGERING!");
             DialogueManager.instance.startDialogue(Dialogue[0]);
             interactedYet = true;
         }
