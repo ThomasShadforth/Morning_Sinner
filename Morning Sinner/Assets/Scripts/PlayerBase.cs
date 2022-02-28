@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +31,7 @@ public class PlayerBase : MonoBehaviour
 
     //Instance variable
     public static PlayerBase instance;
+    Vector3 positiveScale, negativeScale, lastMoveDirection;
 
     PlayerGrab grab;
 
@@ -51,6 +53,10 @@ public class PlayerBase : MonoBehaviour
         moveVal = 1;
         grab = GetComponent<PlayerGrab>();
         defMoveSpeed = moveSpeed;
+        negativeScale = transform.localScale * -1;
+        positiveScale = transform.localScale;
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -60,19 +66,30 @@ public class PlayerBase : MonoBehaviour
         checkForGrab();
         checkDirection();
         rb.velocity = new Vector3(move.x * moveSpeed, rb.velocity.y, move.z * moveSpeed);
-        
+        Animate();
+
     }
 
     private void FixedUpdate()
     {
         isGrounded = Physics.CheckSphere(feetPos.position, feetRadius, whatIsGround);
 
-        move.x = Input.GetAxisRaw("Horizontal");
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveZ = Input.GetAxisRaw("Vertical");
 
-        move.z = Input.GetAxisRaw("Vertical");
+        if((moveX == 0 && moveZ == 0) && move.x != 0 || move.z != 0)
+        {
+            lastMoveDirection = move;
+        }
 
-        move.Normalize();
+
+
+        move = new Vector3(moveX, 0, moveZ).normalized;
+
+        
     }
+
+    #region Movement Methods
 
     void checkForJump()
     {
@@ -133,18 +150,22 @@ public class PlayerBase : MonoBehaviour
             if (moveVal > 0)
             {
                 Vector3 scalar = transform.localScale;
-                scalar.x = 1;
+                scalar.x = positiveScale.x;
                 transform.localScale = scalar;
             }
             else
             {
                 Vector3 scalar = transform.localScale;
-                scalar.x = -1;
+                scalar.x = negativeScale.x;
                 transform.localScale = scalar;
             }
         }
     }
 
+
+    #endregion
+
+    #region Player Actions
     void checkForGrab()
     {
         if (grab.isGrabbing)
@@ -165,8 +186,20 @@ public class PlayerBase : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Utility Methods
+    private void Animate()
+    {
+        animator.SetFloat("Anim_Last_Move_X", lastMoveDirection.x);
+        animator.SetFloat("Anim_Last_Move_Y", lastMoveDirection.z);
+    }
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(feetPos.position, feetRadius);
     }
+
+    #endregion
 }
