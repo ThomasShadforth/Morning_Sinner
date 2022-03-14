@@ -12,6 +12,7 @@ public class DialogueEditor : EditorWindow
     private readonly string defaultFileName = "DialogueFileName";
     private TextField fileNameTextField;
     private Button saveButton;
+    private DialogueGraphView _graphview;
 
     [MenuItem("Window/Dialogue System/Dialogue Graph")]
     public static void ShowExample()
@@ -32,16 +33,16 @@ public class DialogueEditor : EditorWindow
     #region Elements Addition
     void AddGraphView()
     {
-        DialogueGraphView graphView = new DialogueGraphView(this);
+        _graphview = new DialogueGraphView(this);
 
         //Graph view size is 0 by default, won't see
         //Stretch to parent size stretches it to the width and height of the editor window,
         //even when resizing
-        graphView.StretchToParentSize();
+        _graphview.StretchToParentSize();
 
         
 
-        rootVisualElement.Add(graphView);
+        rootVisualElement.Add(_graphview);
         
     }
 
@@ -53,7 +54,7 @@ public class DialogueEditor : EditorWindow
             fileNameTextField.value = callback.newValue.RemoveWhitespaces().RemoveSpecialCharacters();
         });
 
-        saveButton = ElementUtilities.CreateButton("Save");
+        saveButton = ElementUtilities.CreateButton("Save", () => Save());
 
         toolbar.Add(fileNameTextField);
         toolbar.Add(saveButton);
@@ -67,6 +68,23 @@ public class DialogueEditor : EditorWindow
     {
         rootVisualElement.AddStyleSheets("DialogueVariables.uss");
         
+    }
+    #endregion
+
+    #region Toolbar Actions
+    private void Save()
+    {
+        if (string.IsNullOrEmpty(fileNameTextField.value))
+        {
+            EditorUtility.DisplayDialog(
+                "Invalid File Name",
+                "Please ensure the file name you've typed in is valid",
+                "Ok"
+                );
+            return;
+        }
+        DialogueIOUtility.Initialize(_graphview, fileNameTextField.value);
+        DialogueIOUtility.Save();
     }
     #endregion
 

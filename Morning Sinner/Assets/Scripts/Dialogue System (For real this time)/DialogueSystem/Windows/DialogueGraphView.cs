@@ -54,6 +54,7 @@ public class DialogueGraphView : GraphView
         OnGroupElementsAdded();
         OnGroupElementsRemoved();
         OnGroupRenamed();
+        OnGraphViewChanged();
 
         AddStyles();
     }
@@ -330,6 +331,21 @@ public class DialogueGraphView : GraphView
 
             dialogueGroup.title = newTitle.RemoveWhitespaces().RemoveSpecialCharacters();
 
+            if (string.IsNullOrEmpty(dialogueGroup.title))
+            {
+                if (!string.IsNullOrEmpty(dialogueGroup.oldTitle))
+                {
+                    RepeatedNamesAmount++;
+                }
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(dialogueGroup.oldTitle))
+                {
+                    RepeatedNamesAmount--;
+                }
+            }
+
             RemoveGroup(dialogueGroup);
 
             dialogueGroup.oldTitle = dialogueGroup.title;
@@ -338,7 +354,44 @@ public class DialogueGraphView : GraphView
         };
     }
 
-   
+    void OnGraphViewChanged()
+    {
+        graphViewChanged = (changes) =>
+        {
+            if (changes.edgesToCreate != null)
+            {
+                foreach(Edge edge in changes.edgesToCreate)
+                {
+                    DialogueNode nextNode = (DialogueNode) edge.input.node;
+
+                    ChoiceSaveData choiceData = (ChoiceSaveData)edge.output.userData;
+
+                    choiceData.NodeID = nextNode.ID;
+                }
+            }
+
+            if(changes.elementsToRemove != null)
+            {
+                Type edgeType = typeof(Edge);
+
+                foreach(GraphElement element in changes.elementsToRemove)
+                {
+                    if(element.GetType() != edgeType)
+                    {
+                        continue;
+                    }
+
+                    Edge edge = (Edge)element;
+
+                    ChoiceSaveData choiceData = (ChoiceSaveData)edge.output.userData;
+
+                    choiceData.NodeID = "";
+                }
+            }
+
+            return changes;
+        };
+    }
 
     #endregion
 

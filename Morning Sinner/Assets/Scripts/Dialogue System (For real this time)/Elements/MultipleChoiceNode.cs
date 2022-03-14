@@ -15,7 +15,12 @@ public class MultipleChoiceNode : DialogueNode
 
         dialogueType = DialogueType.MultipleChoice;
 
-        Choices.Add("New Choice");
+        ChoiceSaveData choiceData = new ChoiceSaveData()
+        {
+            Text = "New Choice"
+        };
+
+        Choices.Add(choiceData);
     }
 
     public override void Draw()
@@ -26,9 +31,16 @@ public class MultipleChoiceNode : DialogueNode
 
         Button addChoiceButton = ElementUtilities.CreateButton("Add Choice", () =>
         {
-            Port choicePort = CreateChoicePort("New Choice");
+            ChoiceSaveData choiceData = new ChoiceSaveData()
+            {
+                Text = "New Choice"
+            };
 
-            Choices.Add("New Choice");
+            Choices.Add(choiceData);
+
+            Port choicePort = CreateChoicePort(choiceData);
+
+            
 
             outputContainer.Add(choicePort);
         });
@@ -39,7 +51,7 @@ public class MultipleChoiceNode : DialogueNode
 
         //OUTPUT CONTAINER
 
-        foreach (string choice in Choices)
+        foreach (ChoiceSaveData choice in Choices)
         {
             Port choicePort = CreateChoicePort(choice);
 
@@ -53,17 +65,37 @@ public class MultipleChoiceNode : DialogueNode
     }
 
     #region Elements Creation
-    private Port CreateChoicePort(string choice)
+    private Port CreateChoicePort(object userData)
     {
         Port choicePort = this.CreatePort();
 
+        choicePort.userData = userData;
+
+        ChoiceSaveData choiceData = (ChoiceSaveData)userData;
+
         choicePort.portName = "";
 
-        Button deleteChoiceButton = ElementUtilities.CreateButton("X");
+        Button deleteChoiceButton = ElementUtilities.CreateButton("X", () => { 
+            if(Choices.Count == 1)
+            {
+                return;
+            }
+
+            if (choicePort.connected)
+            {
+                _graphView.DeleteElements(choicePort.connections);
+            }
+
+            Choices.Remove(choiceData);
+
+            _graphView.RemoveElement(choicePort);
+        });
 
         deleteChoiceButton.AddToClassList("ds-node__button");
 
-        TextField choiceTextField = ElementUtilities.CreateTextField(choice);
+        TextField choiceTextField = ElementUtilities.CreateTextField(choiceData.Text, null, callback => {
+            choiceData.Text = callback.newValue;
+        });
 
         choiceTextField.AddClasses(
             "ds-node__textfield",
