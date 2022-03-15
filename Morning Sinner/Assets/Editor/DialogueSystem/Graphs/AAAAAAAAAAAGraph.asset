@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2766c9410fe86d14d8040c3a96675c95, type: 3}
-  m_Name: DialogueFileNameGraph
+  m_Name: AAAAAAAAAAAGraph
   m_EditorClassIdentifier: 
-  <FileName>k__BackingField: DialogueFileName
+  <FileName>k__BackingField: AAAAAAAAAAA
   <Groups>k__BackingField: []
   <Nodes>k__BackingField: []
   <OldGroupNames>k__BackingField:
-  - firstgroup
+  - Group
   - Dialogue Group
-  <OldUngroupedNodeNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - DialogueName
   <OldGroupedNodeNames>k__BackingField:
     list:
-    - Key: firstgroup
-      Value:
-      - Singlenode
-      - DialogueName
     - Key: Dialogue Group
       Value:
-      - Nodemulti
+      - DialogueName
+    - Key: Group
+      Value:
+      - DialogueName
