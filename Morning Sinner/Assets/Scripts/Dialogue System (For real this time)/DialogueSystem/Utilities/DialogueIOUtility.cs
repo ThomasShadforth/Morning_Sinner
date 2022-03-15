@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public static class DialogueIOUtility
@@ -16,6 +17,10 @@ public static class DialogueIOUtility
 
     private static Dictionary<string, DialogueGroupSO> createdGroups;
     private static Dictionary<string, DialogueSO> createdDialogues;
+
+    private static Dictionary<string, DialogueGroup> loadedGroups;
+    private static Dictionary<string, DialogueNode> loadedNodes;
+
     public static void Initialize(DialogueGraphView graphView,string graphName)
     {
         _graphview = graphView;
@@ -26,6 +31,8 @@ public static class DialogueIOUtility
         nodes = new List<DialogueNode>();
         createdGroups = new Dictionary<string, DialogueGroupSO>();
         createdDialogues = new Dictionary<string, DialogueSO>();
+        loadedGroups = new Dictionary<string, DialogueGroup>();
+        loadedNodes = new Dictionary<string, DialogueNode>();
     }
 
     #region Save Methods
@@ -135,18 +142,7 @@ public static class DialogueIOUtility
 
     private static void SaveNodeToGraph(DialogueNode node, GraphSaveDataSO graphData)
     {
-        List<ChoiceSaveData> choices = new List<ChoiceSaveData>();
-
-        foreach(ChoiceSaveData choice in node.Choices)
-        {
-            ChoiceSaveData choiceData = new ChoiceSaveData()
-            {
-                Text = choice.Text,
-                NodeID = choice.NodeID
-            };
-
-            choices.Add(choiceData);
-        }
+        List<ChoiceSaveData> choices = CloneNodeChoices(node.Choices);
 
         DialogueNodeSaveData nodeData = new DialogueNodeSaveData()
         {
@@ -162,6 +158,7 @@ public static class DialogueIOUtility
         graphData.Nodes.Add(nodeData);
     }
 
+    
     private static void SaveNodeToScriptableObject(DialogueNode node, DialogueContainerSO dialogueContainer)
     {
         DialogueSO dialogue;
@@ -174,7 +171,7 @@ public static class DialogueIOUtility
         }
         else
         {
-            dialogue = CreateAsset<DialogueSO>($"{containerFolderPath}/Global/Dialgoues", node.DialogueName);
+            dialogue = CreateAsset<DialogueSO>($"{containerFolderPath}/Global/Dialogues", node.DialogueName);
 
             dialogueContainer.UngroupedDialogues.Add(dialogue);
         }
@@ -268,10 +265,103 @@ public static class DialogueIOUtility
         graphData.OldUngroupedNodeNames = new List<string>(currentUngroupedNodeNames);
     }
 
-    
+
 
     #endregion
 
+    #endregion
+
+    #region Load Methods
+    public static void Load()
+    {
+        GraphSaveDataSO graphData = LoadAsset<GraphSaveDataSO>("Assets/Editor/DialogueSystem/Graphs", graphFileName);
+
+        if(graphData == null)
+        {
+            EditorUtility.DisplayDialog("Couldn't load the file!",
+                "The file at the following path could not be found:\n\n" +
+                $"Assets/Editor/DialogueSystem/Graphs/{graphFileName}\n\n" +
+                "Make sure you cose the right file and it's placed at the folder path mentioned above.",
+                "Ok"
+                );
+
+            return;
+        }
+
+        DialogueEditor.UpdateFileName(graphData.FileName);
+
+        LoadGroups(graphData.Groups);
+        LoadNodes(graphData.Nodes);
+        LoadNodesConnections();
+    }
+    private static void LoadGroups(List<GroupSaveData> groups)
+    {
+        foreach(GroupSaveData groupData in groups)
+        {
+            DialogueGroup group = _graphview.CreateGroup(groupData.GroupName, groupData.Position);
+
+            group.ID = groupData.ID;
+
+            loadedGroups.Add(group.ID, group);
+        }
+    }
+
+    private static void LoadNodes(List<DialogueNodeSaveData> nodes)
+    {
+        foreach(DialogueNodeSaveData nodeData in nodes)
+        {
+            List<ChoiceSaveData> choices = CloneNodeChoices(nodeData.Choices);
+
+            DialogueNode node = _graphview.CreateNode(nodeData.Name, nodeData.dialogueType, nodeData.Position, false);
+            node.ID = nodeData.ID;
+            node.Choices = choices;
+            node.Text = nodeData.Text;
+            node.Draw();
+
+            _graphview.AddElement(node);
+            loadedNodes.Add(node.ID, node);
+
+            if (string.IsNullOrEmpty(nodeData.GroupID))
+            {
+                continue;
+            }
+
+            DialogueGroup group = loadedGroups[nodeData.GroupID];
+            node.group = group;
+
+            group.AddElement(node);
+        }
+    }
+
+    private static void LoadNodesConnections()
+    {
+        foreach(KeyValuePair<string, DialogueNode> loadedNode in loadedNodes)
+        {
+            //If the choice data for a port contains a nodeID (Connected to another node), then get the node with that node id and connect the input port to the output
+            foreach(Port choicePort in loadedNode.Value.outputContainer.Children())
+            {
+                //If null, don't connect it
+                ChoiceSaveData choiceData = (ChoiceSaveData)choicePort.userData;
+
+                if (string.IsNullOrEmpty(choiceData.NodeID))
+                {
+                    continue;
+                }
+
+                DialogueNode nextNode = loadedNodes[choiceData.NodeID];
+
+                //Get the input port for the next node from the container, cast it as a port
+                Port nextNodeInputPort = (Port) nextNode.inputContainer.Children().First();
+
+                //Return the edge from the connect between the two ports
+                Edge edge = choicePort.ConnectTo(nextNodeInputPort);
+                //Add the edge to the graphview
+                _graphview.AddElement(edge);
+
+                loadedNode.Value.RefreshPorts();
+            }
+        }
+    }
     #endregion
 
     #region Creation Methods
@@ -334,19 +424,26 @@ public static class DialogueIOUtility
     private static T CreateAsset<T>(string path, string assetName) where T: ScriptableObject
     {
         string fullPath = $"{path}/{assetName}.asset";
+        T asset = LoadAsset<T>(path, assetName);
 
-        T asset = AssetDatabase.LoadAssetAtPath<T>(fullPath);
-
-        if(asset == null)
+        if (asset == null)
         {
             asset = ScriptableObject.CreateInstance<T>();
 
+            
             AssetDatabase.CreateAsset(asset, fullPath);
         }
 
-        
+
 
         return asset;
+    }
+
+    private static T LoadAsset<T>(string Path, string assetName) where T : ScriptableObject
+    {
+        string fullPath = $"{Path}/{assetName}.asset";
+
+        return AssetDatabase.LoadAssetAtPath<T>(fullPath);
     }
 
     private static void RemoveAsset(string path, string assetName)
@@ -361,5 +458,24 @@ public static class DialogueIOUtility
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }
+
+    private static List<ChoiceSaveData> CloneNodeChoices(List<ChoiceSaveData> nodeChoices)
+    {
+        List<ChoiceSaveData> choices = new List<ChoiceSaveData>();
+
+        foreach (ChoiceSaveData choice in nodeChoices)
+        {
+            ChoiceSaveData choiceData = new ChoiceSaveData()
+            {
+                Text = choice.Text,
+                NodeID = choice.NodeID
+            };
+
+            choices.Add(choiceData);
+        }
+
+        return choices;
+    }
+
     #endregion
 }

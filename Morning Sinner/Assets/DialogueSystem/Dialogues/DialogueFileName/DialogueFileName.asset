@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bacffba304cb883459a97c229e1277ec, type: 3}
   m_Name: DialogueFileName
   m_EditorClassIdentifier: 
+  <FileName>k__BackingField: DialogueFileName
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: ff0df1ff195dd3a48b52f6e13b4a0362, type: 2}
+  - {fileID: 11400000, guid: 7bf5beca4a4f9294f9b8e1835b821ae6, type: 2}
+  - {fileID: 11400000, guid: 9736283a640475142b14a5429c1be294, type: 2}

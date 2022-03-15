@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GraphSaveDataSO : ScriptableObject
 {
-    [SerializeField] public string FileName { get; set; }
-    [SerializeField] public List<GroupSaveData> Groups { get; set; }
-    [SerializeField] public List<DialogueNodeSaveData> Nodes { get; set; }
+    [field: SerializeField] public string FileName { get; set; }
+    [field: SerializeField] public List<GroupSaveData> Groups { get; set; }
+    [field: SerializeField] public List<DialogueNodeSaveData> Nodes { get; set; }
     
-    [SerializeField] public List<string> OldGroupNames { get; set; }
-    [SerializeField] public List<string> OldUngroupedNodeNames { get; set; }
-    [SerializeField] public SerializableDictionary<string, List<string>> OldGroupedNodeNames { get; set; }
+    [field: SerializeField] public List<string> OldGroupNames { get; set; }
+    [field: SerializeField] public List<string> OldUngroupedNodeNames { get; set; }
+    [field: SerializeField] public SerializableDictionary<string, List<string>> OldGroupedNodeNames { get; set; }
 
     public void Initialize(string fileName)
     {

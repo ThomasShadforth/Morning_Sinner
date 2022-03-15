@@ -12,3 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2766c9410fe86d14d8040c3a96675c95, type: 3}
   m_Name: DialogueFileNameGraph
   m_EditorClassIdentifier: 
+  <FileName>k__BackingField: DialogueFileName
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField: []
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - DialogueName
+  - NewDialogue
+  - MultiNode
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

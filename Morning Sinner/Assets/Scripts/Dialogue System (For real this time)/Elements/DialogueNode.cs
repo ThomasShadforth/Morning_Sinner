@@ -20,10 +20,10 @@ public class DialogueNode : Node
 
     private Color defaultBackgroundColor;
 
-    public virtual void Initialize(DialogueGraphView graphView,Vector2 position)
+    public virtual void Initialize(string nodeName, DialogueGraphView graphView,Vector2 position)
     {
         ID = Guid.NewGuid().ToString();
-        DialogueName = "DialogueName";
+        DialogueName = nodeName;
         Choices = new List<ChoiceSaveData>();
         Text = "Dialogue Text";
 

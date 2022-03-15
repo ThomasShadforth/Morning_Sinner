@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueGroupSO : ScriptableObject
 {
-    [SerializeField] public string GroupName { get; set; }
+    [field: SerializeField] public string GroupName { get; set; }
 
     public void Initialize(string groupName)
     {
