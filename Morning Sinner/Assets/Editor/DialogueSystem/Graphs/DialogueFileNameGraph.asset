@@ -15,16 +15,11 @@ MonoBehaviour:
   <FileName>k__BackingField: DialogueFileName
   <Groups>k__BackingField: []
   <Nodes>k__BackingField: []
-  <OldGroupNames>k__BackingField:
-  - firstgroup
-  - Dialogue Group
-  <OldUngroupedNodeNames>k__BackingField: []
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - DialogueName
+  - OtherNode
+  - OtherOtherNode
+  - NewNode
   <OldGroupedNodeNames>k__BackingField:
-    list:
-    - Key: firstgroup
-      Value:
-      - Singlenode
-      - DialogueName
-    - Key: Dialogue Group
-      Value:
-      - Nodemulti
+    list: []

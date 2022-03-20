@@ -14,12 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FileName>k__BackingField: DialogueFileName
   <DialogueGroups>k__BackingField:
-    list:
-    - Key: {fileID: 11400000, guid: bd63d33244eada94f8f98edf1ff79c50, type: 2}
-      Value:
-      - {fileID: 11400000, guid: 62174fd46e0adf948a57da736bc7c1f9, type: 2}
-      - {fileID: 11400000, guid: 2359a1fb7b91f894da2397b7b71b093e, type: 2}
-    - Key: {fileID: 11400000, guid: f8dd06a0a48b3944989d77ed7a129484, type: 2}
-      Value:
-      - {fileID: 11400000, guid: e42cce171f87065438c3e8349b312fa4, type: 2}
-  <UngroupedDialogues>k__BackingField: []
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: ff0df1ff195dd3a48b52f6e13b4a0362, type: 2}
+  - {fileID: 11400000, guid: c3b9d2fa58740434fa2526e0b4e1da8a, type: 2}
+  - {fileID: 11400000, guid: 27ca0108a7987534b9e3054c5d5c1954, type: 2}
+  - {fileID: 11400000, guid: 02a0298f9ef3e7e488eef0c8bffe2653, type: 2}
