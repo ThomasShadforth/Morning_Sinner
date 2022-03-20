@@ -5,9 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class GroupSaveData
 {
-    [SerializeField]
+    [field: SerializeField]
     public string ID { get; set; }
-    [SerializeField] public string GroupName { get; set; }
-    [SerializeField] public Vector2 Position { get; set; }
+    [field: SerializeField] public string GroupName { get; set; }
+    [field: SerializeField] public Vector2 Position { get; set; }
     
 }

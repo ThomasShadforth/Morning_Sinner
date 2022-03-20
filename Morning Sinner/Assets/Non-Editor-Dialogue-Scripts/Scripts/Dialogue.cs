@@ -7,7 +7,7 @@ public class Dialogue : MonoBehaviour
     
 
     //Scriptable objects
-    [SerializeField] private DialogueSO dialogue;
+    [SerializeField] public DialogueSO dialogue;
     [SerializeField] private DialogueContainerSO dialogueContainer;
     [SerializeField] private DialogueGroupSO dialogueGroup;
 

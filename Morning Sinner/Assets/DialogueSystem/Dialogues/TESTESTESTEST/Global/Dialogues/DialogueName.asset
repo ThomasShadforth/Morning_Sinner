@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
-  m_Name: NewNode
+  m_Name: DialogueName
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: NewNode
-  <DialogueText>k__BackingField: Dialogue Text
+  <DialogueName>k__BackingField: DialogueName
+  <DialogueText>k__BackingField: Testing the dialogue here! Hoping this works!
   <Choices>k__BackingField: []
   <dialogueType>k__BackingField: 0
-  <IsStartingDialogue>k__BackingField: 0
+  <IsStartingDialogue>k__BackingField: 1

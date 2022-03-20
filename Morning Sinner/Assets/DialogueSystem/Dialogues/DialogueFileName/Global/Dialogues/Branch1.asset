@@ -10,10 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
-  m_Name: OtherOtherNode
+  m_Name: Branch1
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: OtherOtherNode
+  <DialogueName>k__BackingField: Branch1
   <DialogueText>k__BackingField: Dialogue Text
-  <Choices>k__BackingField: []
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: ff0df1ff195dd3a48b52f6e13b4a0362, type: 2}
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 0}
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 0}
   <dialogueType>k__BackingField: 1
-  <IsStartingDialogue>k__BackingField: 1
+  <IsStartingDialogue>k__BackingField: 0

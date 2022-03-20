@@ -54,6 +54,7 @@ public class DialogueInspector : Editor
 
         bool currentStartingDialoguesOnlyFilter = startingDialoguesOnlyProperty.boolValue;
 
+
         List<string> DialogueNames;
 
         string DialogueFolderPath = $"Assets/DialogueSystem/Dialogues/{dialogueContainer.FileName}";

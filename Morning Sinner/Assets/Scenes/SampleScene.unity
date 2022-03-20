@@ -2190,6 +2190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986092110}
   - component: {fileID: 986092109}
+  - component: {fileID: 986092111}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -2228,6 +2229,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &986092111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986092108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65a009ec30a8244bb8def4b6d052cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingDialogue: {fileID: 0}
+  textUI: {fileID: 1333222185}
+  animator: {fileID: 432620647}
+  dialogueInProg: 0
 --- !u!1 &990809791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1188683948}
   - component: {fileID: 1188683947}
+  - component: {fileID: 1188683949}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -2463,13 +2481,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c061a222c3983ce4b87367735ced471d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 27ca0108a7987534b9e3054c5d5c1954, type: 2}
-  dialogueContainer: {fileID: 11400000, guid: 889c1d40bda1b724e871b3f17b9f805a, type: 2}
+  dialogue: {fileID: 11400000, guid: 65427d656566f5b4f9cdfd62846dad50, type: 2}
+  dialogueContainer: {fileID: 11400000, guid: 09cae7908f51e2f40a03c344ce31b36f, type: 2}
   dialogueGroup: {fileID: 11400000, guid: 2ebfce720fd5f5e4d9d25da560124108, type: 2}
   groupedDialogues: 0
-  startingDialoguesOnly: 0
+  startingDialoguesOnly: 1
   selectedDialogueGroupIndex: 0
-  selectedDialogueIndex: 2
+  selectedDialogueIndex: 0
 --- !u!4 &1188683948
 Transform:
   m_ObjectHideFlags: 0
@@ -2484,6 +2502,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1188683949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188683946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82e3677953f5d14d9f2f7f390515968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedDialogue: {fileID: 1188683947}
 --- !u!1 &1220011693
 GameObject:
   m_ObjectHideFlags: 0
