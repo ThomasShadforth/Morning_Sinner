@@ -8,6 +8,7 @@ public class DialogueLoader : MonoBehaviour
 {
     [SerializeField] private DialogueSO startingDialogue;
     [SerializeField] private TextMeshProUGUI textUI;
+    [SerializeField] private TextMeshProUGUI nameUI;
 
     private DialogueSO currentDialogue;
 
@@ -19,6 +20,9 @@ public class DialogueLoader : MonoBehaviour
     public bool dialogueInProg;
 
     public static DialogueLoader instance;
+
+    [SerializeField] AudioSource _as;
+    [SerializeField] List<AudioClip> gruntClips;
 
     private void Awake()
     {
@@ -39,7 +43,7 @@ public class DialogueLoader : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-        sentences = new Queue<string>();
+        _as = GetComponent<AudioSource>();
     }
 
     public void SetStartingDialogue(DialogueSO dialogueObject)
@@ -54,7 +58,7 @@ public class DialogueLoader : MonoBehaviour
         dialogueInProg = true;
 
         sentence = currentDialogue.DialogueText;
-
+        nameUI.text = currentDialogue.NameText;
         ShowNextSentence();
 
 
@@ -75,7 +79,9 @@ public class DialogueLoader : MonoBehaviour
         }
 
         currentDialogue = nextDialogue;
+        nameUI.text = currentDialogue.NameText;
         sentence = currentDialogue.DialogueText;
+
         ShowNextSentence();
 
 
@@ -88,7 +94,9 @@ public class DialogueLoader : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             textUI.text += letter;
+            _as.Play();
             yield return new WaitForSeconds(.05f);
+            _as.Stop();
         }
     }
 
@@ -96,6 +104,17 @@ public class DialogueLoader : MonoBehaviour
     {
         animator.SetBool("isOpen", false);
         dialogueInProg = false;
+    }
+
+    public void SetAudioSourceClip(string speakerName)
+    {
+        foreach(AudioClip clip in gruntClips)
+        {
+            if (clip.name.Contains(speakerName))
+            {
+                _as.clip = clip;
+            }
+        }
     }
 
     // Update is called once per frame

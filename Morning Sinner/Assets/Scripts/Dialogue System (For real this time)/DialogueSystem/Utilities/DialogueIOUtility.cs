@@ -148,6 +148,7 @@ public static class DialogueIOUtility
         {
             ID = node.ID,
             Name = node.DialogueName,
+            NameText = node.NameText,
             Choices = choices,
             Text = node.Text,
             GroupID = node.group?.ID,
@@ -178,6 +179,7 @@ public static class DialogueIOUtility
 
         dialogue.Initialize(
             node.DialogueName,
+            node.NameText,
             node.Text,
             ConvertNodeChoicesToDialogueChoices(node.Choices),
             node.dialogueType,
@@ -316,6 +318,7 @@ public static class DialogueIOUtility
             node.ID = nodeData.ID;
             node.Choices = choices;
             node.Text = nodeData.Text;
+            node.NameText = nodeData.NameText;
             node.Draw();
 
             _graphview.AddElement(node);

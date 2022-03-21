@@ -12,6 +12,9 @@ public class DialogueNode : Node
     public string DialogueName { get; set; }
     public List<ChoiceSaveData> Choices { get; set; }
     public string Text { get; set; }
+
+    public string NameText { get; set; }
+
     public DialogueType dialogueType { get; set; }
 
     public DialogueGroup group { get; set; }
@@ -26,6 +29,7 @@ public class DialogueNode : Node
         DialogueName = nodeName;
         Choices = new List<ChoiceSaveData>();
         Text = "Dialogue Text";
+        NameText = "Speaker Name";
 
         _graphView = graphView;
 
@@ -98,6 +102,7 @@ public class DialogueNode : Node
             );
 
         
+        
 
         titleContainer.Insert(0, dialogeNameTextField);
 
@@ -113,6 +118,11 @@ public class DialogueNode : Node
 
         Foldout textFoldout = ElementUtilities.CreateFoldout("Dialogue Text");
 
+        TextField nameTextField = ElementUtilities.CreateTextArea(NameText, null, callback =>
+        {
+            NameText = callback.newValue;
+        });
+
         TextField textTextField = ElementUtilities.CreateTextArea(Text, null, callback => {
             Text = callback.newValue;
         });
@@ -122,9 +132,10 @@ public class DialogueNode : Node
             "ds-node__quote-textfield"
             );
 
-        
 
+        textFoldout.Add(nameTextField);
         textFoldout.Add(textTextField);
+        
 
         customDataContainer.Add(textFoldout);
 

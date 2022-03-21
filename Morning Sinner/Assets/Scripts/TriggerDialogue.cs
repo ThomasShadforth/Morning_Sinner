@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class TriggerDialogue : MonoBehaviour
 {
+    public Dialogue[] dialogueRoutes;
+    public float interactionCount;
+
     public Dialogue selectedDialogue;
     DialogueSO DialogueSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        DialogueSource = selectedDialogue.dialogue;
+        
 
     }
 
@@ -19,9 +22,20 @@ public class TriggerDialogue : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.L) && !DialogueLoader.instance.dialogueInProg)
         {
-            Debug.Log("STARTING");
+            if(interactionCount == 0)
+            {
+                DialogueSource = dialogueRoutes[0].dialogue;
+            }
+            else
+            {
+                DialogueSource = dialogueRoutes[1].dialogue;
+            }
+
+            
             DialogueLoader.instance.SetStartingDialogue(DialogueSource);
             DialogueLoader.instance.StartBranchingDialogue();
+
+            interactionCount++;
         }
     }
 

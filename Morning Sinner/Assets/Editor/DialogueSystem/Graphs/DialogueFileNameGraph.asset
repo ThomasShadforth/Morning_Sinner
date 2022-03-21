@@ -15,41 +15,73 @@ MonoBehaviour:
   <FileName>k__BackingField: DialogueFileName
   <Groups>k__BackingField: []
   <Nodes>k__BackingField:
-  - <ID>k__BackingField: 871c2fdc-d1fa-47a3-9200-c8a9b92af45d
-    <Name>k__BackingField: Branch1
-    <Text>k__BackingField: Testing the following node! Tell me if this works in sequence!
+  - <ID>k__BackingField: 583320b3-def5-44c0-b80f-c1ebcfcccc8e
+    <Name>k__BackingField: SecondNode
+    <NameText>k__BackingField: TestName2
+    <Text>k__BackingField: Oh hi!
     <Choices>k__BackingField:
     - <Text>k__BackingField: New Choice
-      <NodeID>k__BackingField: 4a7e3500-105e-40c3-837e-8431c72f7cf1
-    - <Text>k__BackingField: New Choice
-      <NodeID>k__BackingField: 
-    - <Text>k__BackingField: New Choice
-      <NodeID>k__BackingField: 
+      <NodeID>k__BackingField: a08bed10-cb56-4dec-bf19-125274a71bfc
     <GroupID>k__BackingField: 
     <dialogueType>k__BackingField: 1
-    <Position>k__BackingField: {x: 900, y: 85}
-  - <ID>k__BackingField: 9670d56c-5ea2-4d7e-9947-b3f6c5a4da37
-    <Name>k__BackingField: StartBode
-    <Text>k__BackingField: Testing the dialogueText! Please let me know if this works!
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 871c2fdc-d1fa-47a3-9200-c8a9b92af45d
-    <GroupID>k__BackingField: 
-    <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 427, y: 76}
-  - <ID>k__BackingField: 4a7e3500-105e-40c3-837e-8431c72f7cf1
-    <Name>k__BackingField: DialogueName
-    <Text>k__BackingField: Final Node! This SHOULD WORK!
+    <Position>k__BackingField: {x: 1047, y: 223}
+  - <ID>k__BackingField: a08bed10-cb56-4dec-bf19-125274a71bfc
+    <Name>k__BackingField: ThirdNode
+    <NameText>k__BackingField: TESTNAME1
+    <Text>k__BackingField: WONDERFUL WEATHER WE ARE HAVING
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 
     <GroupID>k__BackingField: 
     <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1379, y: -43}
+    <Position>k__BackingField: {x: 1486, y: 248}
+  - <ID>k__BackingField: 63a426e5-0304-4f9f-bdd8-6187b89271ac
+    <Name>k__BackingField: StartNode
+    <NameText>k__BackingField: TESTNAME1
+    <Text>k__BackingField: HELLO!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 583320b3-def5-44c0-b80f-c1ebcfcccc8e
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 541, y: 223}
+  - <ID>k__BackingField: fb74704e-6d08-4012-828b-940559b178e0
+    <Name>k__BackingField: SecondRouteNode
+    <NameText>k__BackingField: TESTNAME1
+    <Text>k__BackingField: HELLO AGAIN!!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 013e015f-fb53-4ba8-8c2d-295e4854b45d
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 591, y: 668}
+  - <ID>k__BackingField: 013e015f-fb53-4ba8-8c2d-295e4854b45d
+    <Name>k__BackingField: SecondRouteSecon
+    <NameText>k__BackingField: TestName2
+    <Text>k__BackingField: Hi again!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 5a5fb8d1-bf55-4fc1-bd31-b2903071da88
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 958, y: 652}
+  - <ID>k__BackingField: 5a5fb8d1-bf55-4fc1-bd31-b2903071da88
+    <Name>k__BackingField: DialogueName
+    <NameText>k__BackingField: TESTNAME1
+    <Text>k__BackingField: I HOPE YOU HAVE A NICE DAY!!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1310, y: 632}
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
-  - Branch1
-  - StartBode
+  - SecondNode
+  - ThirdNode
+  - StartNode
+  - SecondRouteNode
+  - SecondRouteSecon
   - DialogueName
   <OldGroupedNodeNames>k__BackingField:
     list: []

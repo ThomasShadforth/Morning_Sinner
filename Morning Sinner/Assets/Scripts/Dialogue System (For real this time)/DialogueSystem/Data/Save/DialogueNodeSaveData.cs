@@ -7,6 +7,7 @@ public class DialogueNodeSaveData
 {
     [field: SerializeField] public string ID { get; set; }
     [field: SerializeField] public string Name { get; set; }
+    [field: SerializeField] public string NameText { get; set; }
     [field: SerializeField] public string Text { get; set; }
     [field: SerializeField] public List<ChoiceSaveData> Choices { get; set; }
     [field: SerializeField] public string GroupID { get; set; }

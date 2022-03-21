@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
-  m_Name: StartBode
+  m_Name: SecondRouteNode
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: StartBode
-  <DialogueText>k__BackingField: Testing the dialogueText! Please let me know if
-    this works!
+  <DialogueName>k__BackingField: SecondRouteNode
+  <DialogueText>k__BackingField: HELLO AGAIN!!
+  <NameText>k__BackingField: TESTNAME1
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 56342c2647c59fc4590b170335ef220c, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 7aff525fc4bf9bd4abfd61d9625df940, type: 2}
   <dialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 1
