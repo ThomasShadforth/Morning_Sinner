@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1648,10 +1648,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.86, y: 1.93}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &809290123
@@ -2481,8 +2481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c061a222c3983ce4b87367735ced471d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 65427d656566f5b4f9cdfd62846dad50, type: 2}
-  dialogueContainer: {fileID: 11400000, guid: 09cae7908f51e2f40a03c344ce31b36f, type: 2}
+  dialogue: {fileID: 11400000, guid: f91979e184d28e94ba5407c562909b5c, type: 2}
+  dialogueContainer: {fileID: 11400000, guid: 889c1d40bda1b724e871b3f17b9f805a, type: 2}
   dialogueGroup: {fileID: 11400000, guid: 2ebfce720fd5f5e4d9d25da560124108, type: 2}
   groupedDialogues: 0
   startingDialoguesOnly: 1
@@ -2986,10 +2986,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986092109}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: DisplayNextSentence
-        m_Mode: 1
+      - m_Target: {fileID: 986092111}
+        m_TargetAssemblyTypeName: DialogueLoader, Assembly-CSharp
+        m_MethodName: SelectOption
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

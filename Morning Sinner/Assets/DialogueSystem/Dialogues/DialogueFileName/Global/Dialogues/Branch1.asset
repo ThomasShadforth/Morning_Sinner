@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Branch1
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: Branch1
-  <DialogueText>k__BackingField: Dialogue Text
+  <DialogueText>k__BackingField: Testing the following node! Tell me if this works
+    in sequence!
   <Choices>k__BackingField:
   - <Text>k__BackingField: New Choice
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: ff0df1ff195dd3a48b52f6e13b4a0362, type: 2}

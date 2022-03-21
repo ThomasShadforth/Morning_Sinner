@@ -191,6 +191,9 @@ public class PlayerBase : MonoBehaviour
     #region Utility Methods
     private void Animate()
     {
+        animator.SetFloat("Anim_Move_X", move.x);
+        animator.SetFloat("Anim_Move_Y", move.z);
+        animator.SetFloat("Anim_Move_Magnitude", move.magnitude);
         animator.SetFloat("Anim_Last_Move_X", lastMoveDirection.x);
         animator.SetFloat("Anim_Last_Move_Y", lastMoveDirection.z);
     }

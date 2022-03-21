@@ -70,7 +70,8 @@ public class DialogueLoader : MonoBehaviour
         DialogueSO nextDialogue = currentDialogue.Choices[choiceIndex].NextDialogue;
         if(nextDialogue == null)
         {
-            //Close the dialogue, then return
+            EndDialogue();
+            return;
         }
 
         currentDialogue = nextDialogue;
@@ -89,6 +90,12 @@ public class DialogueLoader : MonoBehaviour
             textUI.text += letter;
             yield return new WaitForSeconds(.05f);
         }
+    }
+
+    public void EndDialogue()
+    {
+        animator.SetBool("isOpen", false);
+        dialogueInProg = false;
     }
 
     // Update is called once per frame

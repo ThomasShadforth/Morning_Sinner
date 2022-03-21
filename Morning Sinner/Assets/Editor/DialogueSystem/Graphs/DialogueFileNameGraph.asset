@@ -15,18 +15,9 @@ MonoBehaviour:
   <FileName>k__BackingField: DialogueFileName
   <Groups>k__BackingField: []
   <Nodes>k__BackingField:
-  - <ID>k__BackingField: 9670d56c-5ea2-4d7e-9947-b3f6c5a4da37
-    <Name>k__BackingField: StartBode
-    <Text>k__BackingField: Dialogue Text
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 871c2fdc-d1fa-47a3-9200-c8a9b92af45d
-    <GroupID>k__BackingField: 
-    <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 503.2, y: 168.8}
   - <ID>k__BackingField: 871c2fdc-d1fa-47a3-9200-c8a9b92af45d
     <Name>k__BackingField: Branch1
-    <Text>k__BackingField: Dialogue Text
+    <Text>k__BackingField: Testing the following node! Tell me if this works in sequence!
     <Choices>k__BackingField:
     - <Text>k__BackingField: New Choice
       <NodeID>k__BackingField: 4a7e3500-105e-40c3-837e-8431c72f7cf1
@@ -36,20 +27,29 @@ MonoBehaviour:
       <NodeID>k__BackingField: 
     <GroupID>k__BackingField: 
     <dialogueType>k__BackingField: 1
-    <Position>k__BackingField: {x: 900, y: 84.8}
+    <Position>k__BackingField: {x: 900, y: 85}
+  - <ID>k__BackingField: 9670d56c-5ea2-4d7e-9947-b3f6c5a4da37
+    <Name>k__BackingField: StartBode
+    <Text>k__BackingField: Testing the dialogueText! Please let me know if this works!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 871c2fdc-d1fa-47a3-9200-c8a9b92af45d
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 427, y: 76}
   - <ID>k__BackingField: 4a7e3500-105e-40c3-837e-8431c72f7cf1
     <Name>k__BackingField: DialogueName
-    <Text>k__BackingField: Dialogue Text
+    <Text>k__BackingField: Final Node! This SHOULD WORK!
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 
     <GroupID>k__BackingField: 
     <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1246.4, y: 84.8}
+    <Position>k__BackingField: {x: 1379, y: -43}
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
-  - StartBode
   - Branch1
+  - StartBode
   - DialogueName
   <OldGroupedNodeNames>k__BackingField:
     list: []
