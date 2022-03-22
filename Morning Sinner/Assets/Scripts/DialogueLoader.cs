@@ -59,6 +59,7 @@ public class DialogueLoader : MonoBehaviour
 
         sentence = currentDialogue.DialogueText;
         nameUI.text = currentDialogue.NameText;
+        SetAudioSourceClip(currentDialogue.NameText);
         ShowNextSentence();
 
 
@@ -80,6 +81,7 @@ public class DialogueLoader : MonoBehaviour
 
         currentDialogue = nextDialogue;
         nameUI.text = currentDialogue.NameText;
+        
         sentence = currentDialogue.DialogueText;
 
         ShowNextSentence();
@@ -95,8 +97,8 @@ public class DialogueLoader : MonoBehaviour
         {
             textUI.text += letter;
             _as.Play();
-            yield return new WaitForSeconds(.05f);
-            _as.Stop();
+            yield return new WaitForSeconds(.1f);
+            //_as.Stop();
         }
     }
 
@@ -110,7 +112,7 @@ public class DialogueLoader : MonoBehaviour
     {
         foreach(AudioClip clip in gruntClips)
         {
-            if (clip.name.Contains(speakerName))
+            if (clip.name.ToString().Contains(speakerName))
             {
                 _as.clip = clip;
             }

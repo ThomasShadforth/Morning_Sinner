@@ -2346,7 +2346,8 @@ MonoBehaviour:
   animator: {fileID: 432620647}
   dialogueInProg: 0
   _as: {fileID: 0}
-  gruntClips: []
+  gruntClips:
+  - {fileID: 8300000, guid: 21b04ab16b734d3448e50bbda1fa3215, type: 3}
 --- !u!82 &986092112
 AudioSource:
   m_ObjectHideFlags: 0

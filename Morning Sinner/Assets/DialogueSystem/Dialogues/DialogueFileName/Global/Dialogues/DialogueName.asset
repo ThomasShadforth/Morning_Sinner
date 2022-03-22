@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
   m_Name: DialogueName
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: DialogueName
+  <DialogueName>k__BackingField: EndNode
   <DialogueText>k__BackingField: I HOPE YOU HAVE A NICE DAY!!
   <NameText>k__BackingField: TESTNAME1
   <Choices>k__BackingField:
