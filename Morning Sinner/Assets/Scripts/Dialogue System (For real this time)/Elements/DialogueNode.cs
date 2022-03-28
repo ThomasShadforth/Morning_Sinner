@@ -1,27 +1,35 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using UnityEngine;
+using System.Linq;
 
 public class DialogueNode : Node
 {
+    public string ID { get; set; }
     public string DialogueName { get; set; }
-    public List<string> Choices { get; set; }
+    public List<ChoiceSaveData> Choices { get; set; }
     public string Text { get; set; }
+
+    public string NameText { get; set; }
+
     public DialogueType dialogueType { get; set; }
 
     public DialogueGroup group { get; set; }
 
-    DialogueGraphView _graphView;
+    protected DialogueGraphView _graphView;
 
     private Color defaultBackgroundColor;
 
-    public virtual void Initialize(DialogueGraphView graphView,Vector2 position)
+    public virtual void Initialize(string nodeName, DialogueGraphView graphView,Vector2 position)
     {
-        DialogueName = "DialogueName";
-        Choices = new List<string>();
+        ID = Guid.NewGuid().ToString();
+        DialogueName = nodeName;
+        Choices = new List<ChoiceSaveData>();
         Text = "Dialogue Text";
+        NameText = "Speaker Name";
 
         _graphView = graphView;
 
@@ -51,6 +59,22 @@ public class DialogueNode : Node
             TextField target = (TextField)callback.target;
 
             target.value = callback.newValue.RemoveWhitespaces().RemoveSpecialCharacters();
+
+            if (string.IsNullOrEmpty(target.value))
+            {
+                if (!string.IsNullOrEmpty(DialogueName))
+                {
+                    _graphView.RepeatedNamesAmount++;
+                }
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(DialogueName))
+                {
+                    _graphView.RepeatedNamesAmount--;
+                }
+            }
+
             if (group == null)
             {
                 _graphView.RemoveUngroupedNode(this);
@@ -78,6 +102,7 @@ public class DialogueNode : Node
             );
 
         
+        
 
         titleContainer.Insert(0, dialogeNameTextField);
 
@@ -93,16 +118,24 @@ public class DialogueNode : Node
 
         Foldout textFoldout = ElementUtilities.CreateFoldout("Dialogue Text");
 
-        TextField textTextField = ElementUtilities.CreateTextArea(Text);
+        TextField nameTextField = ElementUtilities.CreateTextArea(NameText, null, callback =>
+        {
+            NameText = callback.newValue;
+        });
+
+        TextField textTextField = ElementUtilities.CreateTextArea(Text, null, callback => {
+            Text = callback.newValue;
+        });
 
         textTextField.AddClasses(
             "ds-node__textfield",
             "ds-node__quote-textfield"
             );
 
-        
 
+        textFoldout.Add(nameTextField);
         textFoldout.Add(textTextField);
+        
 
         customDataContainer.Add(textFoldout);
 
@@ -139,6 +172,13 @@ public class DialogueNode : Node
         }
     }
 
+    public bool isStartingNode()
+    {
+        Port inputPort = (Port)inputContainer.Children().First();
+
+        return !inputPort.connected;
+    }
+
     public void SetErrorStyle(Color color)
     {
         mainContainer.style.backgroundColor = color;
@@ -148,5 +188,7 @@ public class DialogueNode : Node
     {
         mainContainer.style.backgroundColor = defaultBackgroundColor;
     }
+
+
     #endregion
 }

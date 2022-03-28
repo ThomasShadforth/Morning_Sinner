@@ -52,7 +52,7 @@ public class PlayerGrab : MonoBehaviour
             if(Physics.Raycast(ray, out hit))
             {
                 GameObject hitObject = hit.transform.gameObject;
-                if(hitObject.layer == LayerMask.NameToLayer("PuzzleObjects"))
+                if(hitObject.layer == LayerMask.NameToLayer("PuzzleObjects") && !isGrabbing)
                 {
                     Destroy(hitObject.GetComponent<Rigidbody>());
                     heldObject = hitObject;

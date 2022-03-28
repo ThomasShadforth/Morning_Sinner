@@ -7,24 +7,29 @@ public class SingleChoiceNode : DialogueNode
 {
     
 
-    public override void Initialize(DialogueGraphView graphView, Vector2 position)
+    public override void Initialize(string nodeName, DialogueGraphView graphView, Vector2 position)
     {
-        base.Initialize(graphView, position);
+        base.Initialize(nodeName, graphView, position);
 
         dialogueType = DialogueType.SingleChoice;
 
-        Choices.Add("Next Dialogue");
+        ChoiceSaveData choiceData = new ChoiceSaveData()
+        {
+            Text = "Next Dialogue"
+        };
+
+        Choices.Add(choiceData);
     }
 
     public override void Draw()
     {
         base.Draw();
 
-        foreach(string choice in Choices)
+        foreach(ChoiceSaveData choice in Choices)
         {
-            Port choicePort = this.CreatePort(choice);
+            Port choicePort = this.CreatePort(choice.Text);
 
-            choicePort.portName = choice;
+            choicePort.userData = choice;
 
             outputContainer.Add(choicePort);
 

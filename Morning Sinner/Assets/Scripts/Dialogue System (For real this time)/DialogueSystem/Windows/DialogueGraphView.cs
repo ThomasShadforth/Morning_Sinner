@@ -11,6 +11,8 @@ public class DialogueGraphView : GraphView
     DialogueSearchWindow searchWindow;
     DialogueEditor editorWindow;
 
+    private MiniMap miniMap;
+
     SerializableDictionary<string, NodeErrorData> ungroupedNodes;
     SerializableDictionary<string, GroupErrorData> groups;
     SerializableDictionary<Group, SerializableDictionary<string, NodeErrorData>> groupedNodes;
@@ -48,14 +50,17 @@ public class DialogueGraphView : GraphView
 
         AddManipulators();
         AddSearchWindow();
+        AddMiniMap();
         AddGridBackground();
         
         OnElementDeleted();
         OnGroupElementsAdded();
         OnGroupElementsRemoved();
         OnGroupRenamed();
+        OnGraphViewChanged();
 
         AddStyles();
+        AddMiniMapStyles();
     }
 
     #region Overridden Methods
@@ -100,6 +105,19 @@ public class DialogueGraphView : GraphView
         nodeCreationRequest = context => SearchWindow.Open(new SearchWindowContext(context.screenMousePosition), searchWindow);
     }
 
+    void AddMiniMap()
+    {
+        miniMap = new MiniMap()
+        {
+            //If anchored, can't move the minimap around
+            anchored = true
+        };
+
+        miniMap.SetPosition(new Rect(15, 50, 200, 180));
+
+        Add(miniMap);
+    }
+
     void AddGridBackground()
     {
         GridBackground gridBackground = new GridBackground();
@@ -115,7 +133,16 @@ public class DialogueGraphView : GraphView
         
     }
 
-    
+    void AddMiniMapStyles()
+    {
+        StyleColor backgroundColor = new StyleColor(new Color32(29, 29, 30, 255));
+        StyleColor borderColor = new StyleColor(new Color32(51, 51, 51, 255));
+        miniMap.style.backgroundColor = backgroundColor;
+        miniMap.style.borderTopColor = borderColor;
+        miniMap.style.borderBottomColor = borderColor;
+        miniMap.style.borderLeftColor = borderColor;
+        miniMap.style.borderRightColor = borderColor;
+    }
 
     #endregion
 
@@ -136,7 +163,7 @@ public class DialogueGraphView : GraphView
     IManipulator CreateNodeContextualMenu(string actionTitle, DialogueType dialogueType)
     {
         ContextualMenuManipulator contextualMenuManipulator = new ContextualMenuManipulator(
-                menuEvent => menuEvent.menu.AppendAction(actionTitle, actionEvent => AddElement(CreateNode(dialogueType, getLocalMousePosition(actionEvent.eventInfo.localMousePosition))))
+                menuEvent => menuEvent.menu.AppendAction(actionTitle, actionEvent => AddElement(CreateNode("DialogueName", dialogueType, getLocalMousePosition(actionEvent.eventInfo.localMousePosition))))
             );
 
         return contextualMenuManipulator;
@@ -177,15 +204,19 @@ public class DialogueGraphView : GraphView
 
     
 
-    public DialogueNode CreateNode(DialogueType dialogueType, Vector2 position)
+    public DialogueNode CreateNode(string nodeName, DialogueType dialogueType, Vector2 position, bool shouldDraw = true)
     {
         Type nodeType = Type.GetType($"{dialogueType}Node");
 
         DialogueNode node = (DialogueNode) Activator.CreateInstance(nodeType);
 
 
-        node.Initialize(this ,position);
-        node.Draw();
+        node.Initialize(nodeName, this ,position);
+
+        if (shouldDraw)
+        {
+            node.Draw();
+        }
 
         AddUngroupedNode(node);
 
@@ -330,6 +361,21 @@ public class DialogueGraphView : GraphView
 
             dialogueGroup.title = newTitle.RemoveWhitespaces().RemoveSpecialCharacters();
 
+            if (string.IsNullOrEmpty(dialogueGroup.title))
+            {
+                if (!string.IsNullOrEmpty(dialogueGroup.oldTitle))
+                {
+                    RepeatedNamesAmount++;
+                }
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(dialogueGroup.oldTitle))
+                {
+                    RepeatedNamesAmount--;
+                }
+            }
+
             RemoveGroup(dialogueGroup);
 
             dialogueGroup.oldTitle = dialogueGroup.title;
@@ -338,7 +384,44 @@ public class DialogueGraphView : GraphView
         };
     }
 
-   
+    void OnGraphViewChanged()
+    {
+        graphViewChanged = (changes) =>
+        {
+            if (changes.edgesToCreate != null)
+            {
+                foreach(Edge edge in changes.edgesToCreate)
+                {
+                    DialogueNode nextNode = (DialogueNode) edge.input.node;
+
+                    ChoiceSaveData choiceData = (ChoiceSaveData)edge.output.userData;
+
+                    choiceData.NodeID = nextNode.ID;
+                }
+            }
+
+            if(changes.elementsToRemove != null)
+            {
+                Type edgeType = typeof(Edge);
+
+                foreach(GraphElement element in changes.elementsToRemove)
+                {
+                    if(element.GetType() != edgeType)
+                    {
+                        continue;
+                    }
+
+                    Edge edge = (Edge)element;
+
+                    ChoiceSaveData choiceData = (ChoiceSaveData)edge.output.userData;
+
+                    choiceData.NodeID = "";
+                }
+            }
+
+            return changes;
+        };
+    }
 
     #endregion
 
@@ -540,6 +623,22 @@ public class DialogueGraphView : GraphView
         Vector2 localMousePosition = contentViewContainer.WorldToLocal(worldMousePosition);
 
         return localMousePosition;
+    }
+
+    public void clearGraph()
+    {
+        graphElements.ForEach(graphElement => RemoveElement(graphElement));
+
+        groups.Clear();
+        groupedNodes.Clear();
+        ungroupedNodes.Clear();
+
+        repeatedNamesAmount = 0;
+    }
+
+    public void ToggleMiniMap()
+    {
+        miniMap.visible = !miniMap.visible;
     }
     #endregion
 }

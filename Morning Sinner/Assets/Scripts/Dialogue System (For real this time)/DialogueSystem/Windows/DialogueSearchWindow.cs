@@ -55,14 +55,14 @@ public class DialogueSearchWindow : ScriptableObject, ISearchWindowProvider
         switch (SearchTreeEntry.userData)
         {
             case DialogueType.SingleChoice:
-                SingleChoiceNode singleChoiceNode = (SingleChoiceNode) _graphView.CreateNode(DialogueType.SingleChoice, localMousePosition);
+                SingleChoiceNode singleChoiceNode = (SingleChoiceNode) _graphView.CreateNode("DialogueName", DialogueType.SingleChoice, localMousePosition);
 
                 _graphView.AddElement(singleChoiceNode);
                 return true;
                 
 
             case DialogueType.MultipleChoice:
-                MultipleChoiceNode multipleChoiceNode = (MultipleChoiceNode)_graphView.CreateNode(DialogueType.MultipleChoice, localMousePosition);
+                MultipleChoiceNode multipleChoiceNode = (MultipleChoiceNode)_graphView.CreateNode("DialogueName", DialogueType.MultipleChoice, localMousePosition);
 
                 _graphView.AddElement(multipleChoiceNode);
                 return true;

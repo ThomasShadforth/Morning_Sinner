@@ -1,16 +1,20 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class DialogueGroup : Group
 {
-    public string oldTitle;
+
+    public string ID { get; set; }
+    public string oldTitle { get; set; }
     private Color defaultBorderColor;
     private float defaultBorderWidth;
 
     public DialogueGroup(string groupTitle, Vector2 position)
     {
+        ID = Guid.NewGuid().ToString();
         title = groupTitle;
         oldTitle = groupTitle;
 
