@@ -37,7 +37,7 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 1486, y: 248}
   - <ID>k__BackingField: 63a426e5-0304-4f9f-bdd8-6187b89271ac
     <Name>k__BackingField: StartNode
-    <NameText>k__BackingField: TESTNAME1
+    <NameText>k__BackingField: Sina
     <Text>k__BackingField: HELLO!
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue

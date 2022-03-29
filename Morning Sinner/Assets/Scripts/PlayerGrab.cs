@@ -54,8 +54,20 @@ public class PlayerGrab : MonoBehaviour
                 GameObject hitObject = hit.transform.gameObject;
                 if(hitObject.layer == LayerMask.NameToLayer("PuzzleObjects") && !isGrabbing)
                 {
+                    
+
                     Destroy(hitObject.GetComponent<Rigidbody>());
                     heldObject = hitObject;
+
+                    if (transform.position.x >  heldObject.transform.position.x)
+                    {
+                        heldObject.transform.localScale = setObjectScale(-1f, heldObject.transform.localScale);
+                    }
+                    else
+                    {
+                        heldObject.transform.localScale = setObjectScale(1f, heldObject.transform.localScale);
+                    }
+
                     heldObject.transform.parent = playerHands.transform;
                     isGrabbing = true;
                     grabbedObjWeight = 50;
@@ -100,5 +112,13 @@ public class PlayerGrab : MonoBehaviour
                 }
             }
         }
+    }
+
+    Vector3 setObjectScale(float objectScalarX, Vector3 objectTransformScale)
+    {
+        Vector3 scalar = objectTransformScale;
+        scalar.x = scalar.x * objectScalarX;
+        objectTransformScale = scalar;
+        return scalar;
     }
 }

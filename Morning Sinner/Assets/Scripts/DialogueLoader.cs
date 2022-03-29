@@ -6,21 +6,30 @@ using TMPro;
 
 public class DialogueLoader : MonoBehaviour
 {
+    [Header("Starting Dialogue")]
     [SerializeField] private DialogueSO startingDialogue;
+
+    [Header("Text Objects")]
     [SerializeField] private TextMeshProUGUI textUI;
     [SerializeField] private TextMeshProUGUI nameUI;
+
+    [Header("UI Objects")]
+    [SerializeField] GameObject SingleChoiceButtonGroup;
+    [SerializeField] GameObject MultipleChoiceButtonGroup;
+    [SerializeField] GameObject[] MultipleChoiceButtons;
 
     private DialogueSO currentDialogue;
 
     private Queue<string> sentences;
     string sentence;
 
-
+    [Header("Dialogue Manager properties")]
     public Animator animator;
     public bool dialogueInProg;
 
     public static DialogueLoader instance;
 
+    [Header("Audio")]
     [SerializeField] AudioSource _as;
     [SerializeField] List<AudioClip> gruntClips;
 
@@ -72,6 +81,7 @@ public class DialogueLoader : MonoBehaviour
 
     public void SelectOption(int choiceIndex)
     {
+        LoadUnloadChoiceButtons(false);
         DialogueSO nextDialogue = currentDialogue.Choices[choiceIndex].NextDialogue;
         if(nextDialogue == null)
         {
@@ -95,11 +105,14 @@ public class DialogueLoader : MonoBehaviour
 
         foreach(char letter in sentence.ToCharArray())
         {
+            PitchShiftDialogue();
             textUI.text += letter;
             _as.Play();
             yield return new WaitForSeconds(.1f);
             //_as.Stop();
         }
+
+        LoadUnloadChoiceButtons(true);
     }
 
     public void EndDialogue()
@@ -117,6 +130,49 @@ public class DialogueLoader : MonoBehaviour
                 _as.clip = clip;
             }
         }
+    }
+
+
+    void LoadUnloadChoiceButtons(bool isLoading)
+    {
+        if (isLoading)
+        {
+            if (currentDialogue.dialogueType == DialogueType.SingleChoice)
+            {
+                SingleChoiceButtonGroup.SetActive(true);
+            }
+            else
+            {
+
+                MultipleChoiceButtonGroup.SetActive(true);
+
+                for (int i = 0; i < currentDialogue.Choices.Count; i++)
+                {
+                    MultipleChoiceButtons[i].SetActive(true);
+                    MultipleChoiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = currentDialogue.Choices[i].Text;
+                }
+            }
+        }
+        else
+        {
+            if(currentDialogue.dialogueType == DialogueType.MultipleChoice)
+            {
+                for(int i = 0; i < currentDialogue.Choices.Count; i++)
+                {
+                    MultipleChoiceButtons[i].SetActive(false);
+                }
+
+                MultipleChoiceButtonGroup.SetActive(false);
+            }
+            else{
+                SingleChoiceButtonGroup.SetActive(false);
+            }
+        }
+    }
+
+    void PitchShiftDialogue()
+    {
+        _as.pitch = Random.Range(.8f, 1.1f);
     }
 
     // Update is called once per frame
