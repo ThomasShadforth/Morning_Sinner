@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
+  m_Name: ABloodyWitch
+  m_EditorClassIdentifier: 
+  <DialogueName>k__BackingField: ABloodyWitch
+  <DialogueText>k__BackingField: Sweet Mary...You're a witch. YOU'RE A BLOODY WITCH
+  <NameText>k__BackingField: Elderly Woman
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: Next Dialogue
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 12dcd4083597e4340a091767601fa344, type: 2}
+  <dialogueType>k__BackingField: 0
+  <IsStartingDialogue>k__BackingField: 0

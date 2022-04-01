@@ -23,7 +23,7 @@ public class UIFade : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            
         }
     }
 

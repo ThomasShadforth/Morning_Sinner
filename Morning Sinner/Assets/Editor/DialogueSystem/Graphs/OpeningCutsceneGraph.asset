@@ -1,0 +1,368 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2766c9410fe86d14d8040c3a96675c95, type: 3}
+  m_Name: OpeningCutsceneGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: OpeningCutscene
+  <Groups>k__BackingField:
+  - <ID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <GroupName>k__BackingField: OpeningStart
+    <Position>k__BackingField: {x: -452, y: -266.99994}
+  - <ID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <GroupName>k__BackingField: ScreamAtHer
+    <Position>k__BackingField: {x: 2840, y: -810}
+  - <ID>k__BackingField: f73b36a6-f98d-4e6c-93a9-a2b47364eac0
+    <GroupName>k__BackingField: CalmHerDown
+    <Position>k__BackingField: {x: 2905, y: 138}
+  - <ID>k__BackingField: 691834b1-a29e-41ff-81ed-6148a30443e6
+    <GroupName>k__BackingField: CutsceneEnd
+    <Position>k__BackingField: {x: 5107, y: -127}
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: d8698bf4-90b9-434e-b424-dbe44aebf92b
+    <Name>k__BackingField: ICantRemember
+    <NameText>k__BackingField: Sina
+    <Text>k__BackingField: I don't remember, I don't know how I got here either
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 62d54b31-999e-4992-9fb6-47afc26fec11
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1507, y: -208}
+  - <ID>k__BackingField: ebee9213-83b6-4f76-aea6-414dbab7860c
+    <Name>k__BackingField: AreYouDeaf
+    <NameText>k__BackingField: Elderly Woman
+    <Text>k__BackingField: Are you deaf girl? Who are you?
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: d8698bf4-90b9-434e-b424-dbe44aebf92b
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1167, y: -208}
+  - <ID>k__BackingField: aa0c4bbd-4eac-4f91-8a19-984189ec658f
+    <Name>k__BackingField: MaliciousIntent
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'Your heart cascades with panic, you look up
+
+      to
+      see an elderly woman clutching a rolling
+
+      pin with malicious intent.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b6edcfa3-c549-4830-8ae7-49e89aadc85e
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -171, y: 176}
+  - <ID>k__BackingField: b6edcfa3-c549-4830-8ae7-49e89aadc85e
+    <Name>k__BackingField: Bloodline
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'She stares at you as if you''ve cursed her
+
+      entire
+      bloodline. Perhaps it''s best to answer
+
+      her before things escalate.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 32f8b0ac-dea5-49be-86a0-6725c59513da
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 155, y: 176}
+  - <ID>k__BackingField: 32f8b0ac-dea5-49be-86a0-6725c59513da
+    <Name>k__BackingField: TellTheName
+    <NameText>k__BackingField: Sina
+    <Text>k__BackingField: My name is...is...
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 3b68eb4b-9178-4373-97f7-e78a6e22e79b
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 433, y: -208}
+  - <ID>k__BackingField: 3b68eb4b-9178-4373-97f7-e78a6e22e79b
+    <Name>k__BackingField: FailsToComeToMind
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'To your surprise, your name fails to come to
+
+      mind.
+      You press deeper, aching to remember,
+
+      but all you feel is a mindscape
+      of emptiness.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 1e6f4bf7-2569-4e1a-897d-2dda88f0d0b0
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 689, y: 176}
+  - <ID>k__BackingField: 1e6f4bf7-2569-4e1a-897d-2dda88f0d0b0
+    <Name>k__BackingField: NothingAtAll
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: You remember nothing at all.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: ebee9213-83b6-4f76-aea6-414dbab7860c
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1018, y: 176}
+  - <ID>k__BackingField: 62d54b31-999e-4992-9fb6-47afc26fec11
+    <Name>k__BackingField: AWaveOfShock
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'A wave of shock washes over the elderly
+
+      woman,
+      she begins to stumble back in fear'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b20db2b5-d248-4b95-8d41-04c4855cae73
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1679, y: 161}
+  - <ID>k__BackingField: b20db2b5-d248-4b95-8d41-04c4855cae73
+    <Name>k__BackingField: ABloodyWitch
+    <NameText>k__BackingField: Elderly Woman
+    <Text>k__BackingField: Sweet Mary...You're a witch. YOU'RE A BLOODY WITCH
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 49915be2-2dae-4d7b-908a-187f282a6e1d
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1917, y: -208}
+  - <ID>k__BackingField: 49915be2-2dae-4d7b-908a-187f282a6e1d
+    <Name>k__BackingField: Disbelief
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'To your disbelief the woman starts howling around
+
+      the
+      house, her screams are enough to split your
+
+      eardrums. What the hell
+      is happening?'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Scream In Panic
+      <NodeID>k__BackingField: 91037c7c-e5b4-4ff0-ac4d-dccaf96d30a7
+    - <Text>k__BackingField: Calm the elderly woman down
+      <NodeID>k__BackingField: 68bfb40a-5563-482d-9235-971dc9f12826
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: 2303, y: -208}
+  - <ID>k__BackingField: 91037c7c-e5b4-4ff0-ac4d-dccaf96d30a7
+    <Name>k__BackingField: SinaScreaming1
+    <NameText>k__BackingField: Sina
+    <Text>k__BackingField: AAAAAAAAAAAAAAAAAAAA!!!!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 9c2cd514-f3e0-4130-af34-be8d92335853
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2865, y: -572}
+  - <ID>k__BackingField: 9c2cd514-f3e0-4130-af34-be8d92335853
+    <Name>k__BackingField: WomanScreaming1
+    <NameText>k__BackingField: Elderly Woman
+    <Text>k__BackingField: AAAAAAAAAAAAAAAAAAAA!!!!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: c9723f85-90c6-4a86-8a53-0aee72a4415f
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3189, y: -572}
+  - <ID>k__BackingField: c9723f85-90c6-4a86-8a53-0aee72a4415f
+    <Name>k__BackingField: SinaScreaming2
+    <NameText>k__BackingField: Sina
+    <Text>k__BackingField: AAAAAAAAAAAAAAAAAAAA!!!!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 6b6ca66c-790d-465e-8c6a-beb4cddcda66
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3489, y: -572}
+  - <ID>k__BackingField: 6b6ca66c-790d-465e-8c6a-beb4cddcda66
+    <Name>k__BackingField: ScreamNarrator
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: You both scream at increasing volumes
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b031d1fb-a336-43f0-a754-a68c9ded8c40
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3802, y: -572}
+  - <ID>k__BackingField: b031d1fb-a336-43f0-a754-a68c9ded8c40
+    <Name>k__BackingField: ElderlyWomanWitch1
+    <NameText>k__BackingField: Elderly Woman
+    <Text>k__BackingField: WITCH!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 75c78be8-ec39-45a2-8488-f34aaeb904b2
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4123, y: -738}
+  - <ID>k__BackingField: 75c78be8-ec39-45a2-8488-f34aaeb904b2
+    <Name>k__BackingField: NotAWitch
+    <NameText>k__BackingField: Sina
+    <Text>k__BackingField: I'M NOT A WITCH YOU CRAZY HAG!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 04bc10ff-2fa0-4f85-8e0e-0b4ec15d6ecd
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4446, y: -751}
+  - <ID>k__BackingField: 04bc10ff-2fa0-4f85-8e0e-0b4ec15d6ecd
+    <Name>k__BackingField: ElderlyWomanWitch2
+    <NameText>k__BackingField: Elderly Woman
+    <Text>k__BackingField: WITCH!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b7ffb78e-8288-4b75-9d1e-90f772c350e8
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4446, y: -538}
+  - <ID>k__BackingField: b7ffb78e-8288-4b75-9d1e-90f772c350e8
+    <Name>k__BackingField: YoureAWitch
+    <NameText>k__BackingField: Sina
+    <Text>k__BackingField: YOU'RE A WITCH!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: df86e582-6fd6-458a-9eff-51bfcfad67f5
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4756, y: -538}
+  - <ID>k__BackingField: 68bfb40a-5563-482d-9235-971dc9f12826
+    <Name>k__BackingField: JumpToYourFeet
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: You jump to your feet and prepare for the worse.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 27766065-c3d6-4b9b-aaa7-b827eef63de7
+    <GroupID>k__BackingField: f73b36a6-f98d-4e6c-93a9-a2b47364eac0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2930, y: 215}
+  - <ID>k__BackingField: 27766065-c3d6-4b9b-aaa7-b827eef63de7
+    <Name>k__BackingField: CalmYourself
+    <NameText>k__BackingField: Sina
+    <Text>k__BackingField: I'm not a witch! Calm yourself please!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: a769946c-2023-45d9-9764-003418c95f50
+    <GroupID>k__BackingField: f73b36a6-f98d-4e6c-93a9-a2b47364eac0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3338, y: 215}
+  - <ID>k__BackingField: a769946c-2023-45d9-9764-003418c95f50
+    <Name>k__BackingField: KnowAWitch
+    <NameText>k__BackingField: Elderly Woman
+    <Text>k__BackingField: 'Lies! I''ve lived long enough to know a witch
+
+      when
+      I see one! Your face tells it all! Away with
+
+      you! Run or be set afire
+      you evil hag!'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: df86e582-6fd6-458a-9eff-51bfcfad67f5
+    <GroupID>k__BackingField: f73b36a6-f98d-4e6c-93a9-a2b47364eac0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3696, y: 197}
+  - <ID>k__BackingField: 1c520c05-da49-4ea1-8000-c6800efa84ab
+    <Name>k__BackingField: AWayOut
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: It's time to find a way out
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 691834b1-a29e-41ff-81ed-6148a30443e6
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5562, y: -68}
+  - <ID>k__BackingField: df86e582-6fd6-458a-9eff-51bfcfad67f5
+    <Name>k__BackingField: SheLeaves
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'With that the elderly woman rushes out of the house
+
+      howling
+      ever louder. You hear the distinctive sound
+
+      of a door being locked.
+      The elderly woman''s cries begin to fade,
+
+      leaving you alone in the house''s
+      silence'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 1c520c05-da49-4ea1-8000-c6800efa84ab
+    <GroupID>k__BackingField: 691834b1-a29e-41ff-81ed-6148a30443e6
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5132, y: -68}
+  - <ID>k__BackingField: 6813321e-e133-4d29-abd8-2d0889c97aeb
+    <Name>k__BackingField: OpeningStart
+    <NameText>k__BackingField: Elderly Woman
+    <Text>k__BackingField: WHO IN THE HELLS ARE YOU?!!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: aa0c4bbd-4eac-4f91-8a19-984189ec658f
+    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -427, y: -208}
+  - <ID>k__BackingField: 1c39a516-2905-41d0-a34d-a0c1502ab4cd
+    <Name>k__BackingField: CutsceneStart
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'You begin to stir from what felt like an eternal slumber,
+
+      light
+      pours into the black craters surrounding your eyes,
+
+      the radiance is
+      soothing yet sensitive. It is strangely peaceful and so-'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 6813321e-e133-4d29-abd8-2d0889c97aeb
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -907, y: -147}
+  <OldGroupNames>k__BackingField:
+  - OpeningStart
+  - ScreamAtHer
+  - CalmHerDown
+  - CutsceneEnd
+  <OldUngroupedNodeNames>k__BackingField:
+  - CutsceneStart
+  <OldGroupedNodeNames>k__BackingField:
+    list:
+    - Key: OpeningStart
+      Value:
+      - ICantRemember
+      - AreYouDeaf
+      - MaliciousIntent
+      - Bloodline
+      - TellTheName
+      - FailsToComeToMind
+      - NothingAtAll
+      - AWaveOfShock
+      - ABloodyWitch
+      - Disbelief
+      - OpeningStart
+    - Key: ScreamAtHer
+      Value:
+      - SinaScreaming1
+      - WomanScreaming1
+      - SinaScreaming2
+      - ScreamNarrator
+      - ElderlyWomanWitch1
+      - NotAWitch
+      - ElderlyWomanWitch2
+      - YoureAWitch
+    - Key: CalmHerDown
+      Value:
+      - JumpToYourFeet
+      - CalmYourself
+      - KnowAWitch
+    - Key: CutsceneEnd
+      Value:
+      - AWayOut
+      - SheLeaves

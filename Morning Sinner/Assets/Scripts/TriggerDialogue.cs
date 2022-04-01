@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class TriggerDialogue : MonoBehaviour
 {
     public Dialogue[] dialogueRoutes;
     public float interactionCount;
 
+    [SerializeField] bool multipleInteractions;
+
     public Dialogue selectedDialogue;
-    DialogueSO DialogueSource;
+    [SerializeField] DialogueSO DialogueSource;
+
+    [SerializeField] PlayableDirector cutsceneTimeline;
 
     // Start is called before the first frame update
     void Start()
@@ -22,22 +27,36 @@ public class TriggerDialogue : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.L) && !DialogueLoader.instance.dialogueInProg)
         {
-            if(interactionCount == 0)
+            DialogueTrig();
+        }
+    }
+
+    public void DialogueTrig()
+    {
+        if (!DialogueLoader.instance.dialogueInProg)
+        {
+            if (multipleInteractions)
             {
-                DialogueSource = dialogueRoutes[0].dialogue;
+                if (interactionCount == 0)
+                {
+                    DialogueSource = dialogueRoutes[0].dialogue;
+                }
+                else
+                {
+                    DialogueSource = dialogueRoutes[1].dialogue;
+                }
             }
             else
             {
-                DialogueSource = dialogueRoutes[1].dialogue;
+                DialogueSource = dialogueRoutes[0].dialogue;
             }
 
-            
+
+
             DialogueLoader.instance.SetStartingDialogue(DialogueSource);
-            DialogueLoader.instance.StartBranchingDialogue();
+            DialogueLoader.instance.StartBranchingDialogue(cutsceneTimeline);
 
             interactionCount++;
         }
     }
-
-
 }

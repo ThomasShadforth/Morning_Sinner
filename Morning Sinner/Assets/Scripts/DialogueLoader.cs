@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEditor;
 using TMPro;
 
@@ -33,6 +34,8 @@ public class DialogueLoader : MonoBehaviour
     [SerializeField] AudioSource _as;
     [SerializeField] List<AudioClip> gruntClips;
 
+    PlayableDirector cutsceneTimelineDir;
+
     private void Awake()
     {
         //currentDialogue = startingDialogue;
@@ -60,8 +63,10 @@ public class DialogueLoader : MonoBehaviour
         currentDialogue = dialogueObject;
     }
 
-    public void StartBranchingDialogue()
+    public void StartBranchingDialogue(PlayableDirector cutsceneDirector)
     {
+        cutsceneTimelineDir = cutsceneDirector;
+        cutsceneTimelineDir.Pause();
         animator.SetBool("isOpen", true);
 
         dialogueInProg = true;
@@ -91,7 +96,7 @@ public class DialogueLoader : MonoBehaviour
 
         currentDialogue = nextDialogue;
         nameUI.text = currentDialogue.NameText;
-        
+        SetAudioSourceClip(currentDialogue.NameText);
         sentence = currentDialogue.DialogueText;
 
         ShowNextSentence();
@@ -108,7 +113,7 @@ public class DialogueLoader : MonoBehaviour
             PitchShiftDialogue();
             textUI.text += letter;
             _as.Play();
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.05f);
             //_as.Stop();
         }
 
@@ -117,6 +122,7 @@ public class DialogueLoader : MonoBehaviour
 
     public void EndDialogue()
     {
+        cutsceneTimelineDir.Play();
         animator.SetBool("isOpen", false);
         dialogueInProg = false;
     }

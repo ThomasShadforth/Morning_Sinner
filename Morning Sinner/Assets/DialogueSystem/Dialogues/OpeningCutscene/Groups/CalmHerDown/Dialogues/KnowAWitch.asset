@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
+  m_Name: KnowAWitch
+  m_EditorClassIdentifier: 
+  <DialogueName>k__BackingField: KnowAWitch
+  <DialogueText>k__BackingField: 'Lies! I''ve lived long enough to know a witch
+
+    when
+    I see one! Your face tells it all! Away with
+
+    you! Run or be set afire you
+    evil hag!'
+  <NameText>k__BackingField: Elderly Woman
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: Next Dialogue
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: a563db0d5edd0a6438017fbe80cbf483, type: 2}
+  <dialogueType>k__BackingField: 0
+  <IsStartingDialogue>k__BackingField: 0

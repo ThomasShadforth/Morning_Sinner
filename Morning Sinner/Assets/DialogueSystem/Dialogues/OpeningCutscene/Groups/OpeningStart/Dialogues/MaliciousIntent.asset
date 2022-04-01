@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
+  m_Name: MaliciousIntent
+  m_EditorClassIdentifier: 
+  <DialogueName>k__BackingField: MaliciousIntent
+  <DialogueText>k__BackingField: 'Your heart cascades with panic, you look up
+
+    to
+    see an elderly woman clutching a rolling
+
+    pin with malicious intent.'
+  <NameText>k__BackingField: Narrator
+  <Choices>k__BackingField:
+  - <Text>k__BackingField: Next Dialogue
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 777e208c441fb7648b61e4100478b472, type: 2}
+  <dialogueType>k__BackingField: 0
+  <IsStartingDialogue>k__BackingField: 0
