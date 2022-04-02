@@ -63,10 +63,14 @@ public class DialogueLoader : MonoBehaviour
         currentDialogue = dialogueObject;
     }
 
-    public void StartBranchingDialogue(PlayableDirector cutsceneDirector)
+    public void StartBranchingDialogue(PlayableDirector cutsceneDirector = null)
     {
-        cutsceneTimelineDir = cutsceneDirector;
-        cutsceneTimelineDir.Pause();
+        if (cutsceneDirector != null)
+        {
+            cutsceneTimelineDir = cutsceneDirector;
+            cutsceneTimelineDir.Pause();
+        }
+
         animator.SetBool("isOpen", true);
 
         dialogueInProg = true;

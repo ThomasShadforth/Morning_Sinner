@@ -16,7 +16,7 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
     <GroupName>k__BackingField: OpeningStart
-    <Position>k__BackingField: {x: -452, y: -266.99994}
+    <Position>k__BackingField: {x: -452, y: -267}
   - <ID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
     <GroupName>k__BackingField: ScreamAtHer
     <Position>k__BackingField: {x: 2840, y: -810}
@@ -25,7 +25,7 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 2905, y: 138}
   - <ID>k__BackingField: 691834b1-a29e-41ff-81ed-6148a30443e6
     <GroupName>k__BackingField: CutsceneEnd
-    <Position>k__BackingField: {x: 5107, y: -127}
+    <Position>k__BackingField: {x: 5537, y: -127}
   <Nodes>k__BackingField:
   - <ID>k__BackingField: d8698bf4-90b9-434e-b424-dbe44aebf92b
     <Name>k__BackingField: ICantRemember
@@ -230,7 +230,7 @@ MonoBehaviour:
     <Text>k__BackingField: YOU'RE A WITCH!
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: df86e582-6fd6-458a-9eff-51bfcfad67f5
+      <NodeID>k__BackingField: 
     <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
     <dialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 4756, y: -538}
@@ -266,7 +266,7 @@ MonoBehaviour:
       you evil hag!'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: df86e582-6fd6-458a-9eff-51bfcfad67f5
+      <NodeID>k__BackingField: 
     <GroupID>k__BackingField: f73b36a6-f98d-4e6c-93a9-a2b47364eac0
     <dialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 3696, y: 197}
@@ -280,25 +280,6 @@ MonoBehaviour:
     <GroupID>k__BackingField: 691834b1-a29e-41ff-81ed-6148a30443e6
     <dialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 5562, y: -68}
-  - <ID>k__BackingField: df86e582-6fd6-458a-9eff-51bfcfad67f5
-    <Name>k__BackingField: SheLeaves
-    <NameText>k__BackingField: Narrator
-    <Text>k__BackingField: 'With that the elderly woman rushes out of the house
-
-      howling
-      ever louder. You hear the distinctive sound
-
-      of a door being locked.
-      The elderly woman''s cries begin to fade,
-
-      leaving you alone in the house''s
-      silence'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 1c520c05-da49-4ea1-8000-c6800efa84ab
-    <GroupID>k__BackingField: 691834b1-a29e-41ff-81ed-6148a30443e6
-    <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 5132, y: -68}
   - <ID>k__BackingField: 6813321e-e133-4d29-abd8-2d0889c97aeb
     <Name>k__BackingField: OpeningStart
     <NameText>k__BackingField: Elderly Woman
@@ -325,6 +306,111 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <dialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: -907, y: -147}
+  - <ID>k__BackingField: df86e582-6fd6-458a-9eff-51bfcfad67f5
+    <Name>k__BackingField: SheLeaves
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'With that the elderly woman rushes out of the house
+
+      howling
+      ever louder. You hear the distinctive sound
+
+      of a door being locked.
+      The elderly woman''s cries begin to fade,
+
+      leaving you alone in the house''s
+      silence'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 1c520c05-da49-4ea1-8000-c6800efa84ab
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5076, y: -76}
+  - <ID>k__BackingField: 769eca2d-8157-418c-9ddf-4e7ea5cf13db
+    <Name>k__BackingField: DoorInteraction
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'You push and pull but to no avail, the door
+
+      refuses
+      to open. It seems the elderly woman
+
+      locked it during her hasty escape.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -333, y: 793}
+  - <ID>k__BackingField: 0e163a2e-4ce4-4936-b113-da924c57c5a7
+    <Name>k__BackingField: TableInteraction
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'You look at the assortments of ingredients laid
+
+      across
+      the table:'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 41970d86-dca1-4a0b-9d76-ccc987b9cdd5
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -333, y: 968}
+  - <ID>k__BackingField: ec92a352-3469-4764-9cbc-47f0a545f9a5
+    <Name>k__BackingField: WindowInteraction
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'A chilling breeze leads your gaze upwards,
+
+      revealing
+      an open window that is out of reach.
+
+      Perhaps there is a way to climb
+      up?'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -333, y: 1178}
+  - <ID>k__BackingField: 41970d86-dca1-4a0b-9d76-ccc987b9cdd5
+    <Name>k__BackingField: Ingredients
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'Onions, potatoes, and other curious lush vegetables
+
+      are
+      temptingly left unguard for your eager hands.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: f9ce7ee0-120a-40c6-ba42-c9e79c826184
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 201, y: 968}
+  - <ID>k__BackingField: f9ce7ee0-120a-40c6-ba42-c9e79c826184
+    <Name>k__BackingField: FoodWillHaveToComeLater
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'But with the elderly woman rousing the town,
+
+      food
+      will have to come later....'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 654, y: 968}
+  - <ID>k__BackingField: c38cb5ca-7907-4fa9-a6a5-b981794c194c
+    <Name>k__BackingField: BucketInteraction
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'An empty bucket sits next to the preparation table.
+
+      It
+      looks light enough to carry, and sturdy enough to be
+
+      stood on. Perhaps
+      it can be used somewhere?'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -333, y: 1439}
   <OldGroupNames>k__BackingField:
   - OpeningStart
   - ScreamAtHer
@@ -332,6 +418,13 @@ MonoBehaviour:
   - CutsceneEnd
   <OldUngroupedNodeNames>k__BackingField:
   - CutsceneStart
+  - SheLeaves
+  - DoorInteraction
+  - TableInteraction
+  - WindowInteraction
+  - Ingredients
+  - FoodWillHaveToComeLater
+  - BucketInteraction
   <OldGroupedNodeNames>k__BackingField:
     list:
     - Key: OpeningStart
@@ -365,4 +458,3 @@ MonoBehaviour:
     - Key: CutsceneEnd
       Value:
       - AWayOut
-      - SheLeaves

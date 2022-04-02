@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
-  m_Name: YoureAWitch
+  m_Name: DoorInteraction
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: YoureAWitch
-  <DialogueText>k__BackingField: YOU'RE A WITCH!
-  <NameText>k__BackingField: Sina
+  <DialogueName>k__BackingField: DoorInteraction
+  <DialogueText>k__BackingField: 'You push and pull but to no avail, the door
+
+    refuses
+    to open. It seems the elderly woman
+
+    locked it during her hasty escape.'
+  <NameText>k__BackingField: Narrator
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 0}
   <dialogueType>k__BackingField: 0
-  <IsStartingDialogue>k__BackingField: 0
+  <IsStartingDialogue>k__BackingField: 1

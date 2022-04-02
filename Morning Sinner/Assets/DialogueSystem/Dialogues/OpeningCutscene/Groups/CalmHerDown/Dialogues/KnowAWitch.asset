@@ -23,6 +23,6 @@ MonoBehaviour:
   <NameText>k__BackingField: Elderly Woman
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: a563db0d5edd0a6438017fbe80cbf483, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 0}
   <dialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0

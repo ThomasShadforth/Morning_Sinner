@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
-  m_Name: YoureAWitch
+  m_Name: FoodWillHaveToComeLater
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: YoureAWitch
-  <DialogueText>k__BackingField: YOU'RE A WITCH!
-  <NameText>k__BackingField: Sina
+  <DialogueName>k__BackingField: FoodWillHaveToComeLater
+  <DialogueText>k__BackingField: 'But with the elderly woman rousing the town,
+
+    food
+    will have to come later....'
+  <NameText>k__BackingField: Narrator
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 0}

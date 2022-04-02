@@ -10,22 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
-  m_Name: SheLeaves
+  m_Name: WindowInteraction
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: SheLeaves
-  <DialogueText>k__BackingField: 'With that the elderly woman rushes out of the house
+  <DialogueName>k__BackingField: WindowInteraction
+  <DialogueText>k__BackingField: 'A chilling breeze leads your gaze upwards,
 
-    howling
-    ever louder. You hear the distinctive sound
+    revealing
+    an open window that is out of reach.
 
-    of a door being locked. The
-    elderly woman''s cries begin to fade,
-
-    leaving you alone in the house''s
-    silence'
+    Perhaps there is a way to climb up?'
   <NameText>k__BackingField: Narrator
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: c59436a64e367994084877714cdd4d38, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 0}
   <dialogueType>k__BackingField: 0
-  <IsStartingDialogue>k__BackingField: 0
+  <IsStartingDialogue>k__BackingField: 1

@@ -69,6 +69,7 @@ public class PlayerGrab : MonoBehaviour
                     }
 
                     heldObject.transform.parent = playerHands.transform;
+                    heldObject.GetComponent<GrabCube>().pickupObject();
                     isGrabbing = true;
                     grabbedObjWeight = 50;
                 }
@@ -106,8 +107,8 @@ public class PlayerGrab : MonoBehaviour
                     {
 
                         //DialogueManager.instance.testDialogueBox.gameObject.SetActive(!DialogueManager.instance.testDialogueBox.activeInHierarchy);
-                        DialogueTrigger trigger = hitObject.gameObject.GetComponent<DialogueTrigger>();
-                        trigger.triggerDialogue();
+                        TriggerDialogue trigger = hitObject.gameObject.GetComponent<TriggerDialogue>();
+                        trigger.DialogueTrig();
                     }
                 }
             }

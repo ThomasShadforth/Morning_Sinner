@@ -10,13 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
-  m_Name: YoureAWitch
+  m_Name: BucketInteraction
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: YoureAWitch
-  <DialogueText>k__BackingField: YOU'RE A WITCH!
-  <NameText>k__BackingField: Sina
+  <DialogueName>k__BackingField: BucketInteraction
+  <DialogueText>k__BackingField: 'An empty bucket sits next to the preparation table.
+
+    It
+    looks light enough to carry, and sturdy enough to be
+
+    stood on. Perhaps it
+    can be used somewhere?'
+  <NameText>k__BackingField: Narrator
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 0}
   <dialogueType>k__BackingField: 0
-  <IsStartingDialogue>k__BackingField: 0
+  <IsStartingDialogue>k__BackingField: 1

@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058f39a9791bceb4695c8486fc1d8a71, type: 3}
-  m_Name: YoureAWitch
+  m_Name: Ingredients
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: YoureAWitch
-  <DialogueText>k__BackingField: YOU'RE A WITCH!
-  <NameText>k__BackingField: Sina
+  <DialogueName>k__BackingField: Ingredients
+  <DialogueText>k__BackingField: 'Onions, potatoes, and other curious lush vegetables
+
+    are
+    temptingly left unguard for your eager hands.'
+  <NameText>k__BackingField: Narrator
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 0}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 10c6e25b06f09aa44b12f0ce690940aa, type: 2}
   <dialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0

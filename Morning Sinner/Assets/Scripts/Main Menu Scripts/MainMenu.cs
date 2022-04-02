@@ -67,6 +67,14 @@ public class MainMenu : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(gameStartCo());
+        
+    }
+
+    IEnumerator gameStartCo()
+    {
+        UIFade.instance.fadeToBlack();
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

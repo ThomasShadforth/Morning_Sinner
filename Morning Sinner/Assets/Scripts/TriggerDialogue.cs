@@ -59,4 +59,11 @@ public class TriggerDialogue : MonoBehaviour
             interactionCount++;
         }
     }
+
+    public void continuePointTrigger(int continueIndex)
+    {
+        DialogueSource = dialogueRoutes[continueIndex].dialogue;
+        DialogueLoader.instance.SetStartingDialogue(DialogueSource);
+        DialogueLoader.instance.StartBranchingDialogue(cutsceneTimeline);
+    }
 }

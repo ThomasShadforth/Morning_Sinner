@@ -5,7 +5,7 @@ using UnityEngine;
 public class PressurePlateTest : MonoBehaviour
 {
     [SerializeField] PuzzleDoor attachedDoor;
-    [SerializeField] List<GameObject> objectsOnPlate = new List<GameObject>();
+    public List<GameObject> objectsOnPlate = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
