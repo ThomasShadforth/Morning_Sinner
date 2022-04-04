@@ -15,6 +15,8 @@ public class TriggerDialogue : MonoBehaviour
 
     [SerializeField] PlayableDirector cutsceneTimeline;
 
+    public int timelineFrameSkip;
+    public bool willSkip;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,9 +56,21 @@ public class TriggerDialogue : MonoBehaviour
 
 
             DialogueLoader.instance.SetStartingDialogue(DialogueSource);
-            DialogueLoader.instance.StartBranchingDialogue(cutsceneTimeline);
+            DialogueLoader.instance.StartBranchingDialogue(willSkip, 0, cutsceneTimeline);
 
             interactionCount++;
+        }
+    }
+
+    public void setWillSkip(int skipBoolInt)
+    {
+        if(skipBoolInt == 1)
+        {
+            willSkip = true;
+        }
+        else
+        {
+            willSkip = false;
         }
     }
 
@@ -64,6 +78,6 @@ public class TriggerDialogue : MonoBehaviour
     {
         DialogueSource = dialogueRoutes[continueIndex].dialogue;
         DialogueLoader.instance.SetStartingDialogue(DialogueSource);
-        DialogueLoader.instance.StartBranchingDialogue(cutsceneTimeline);
+        DialogueLoader.instance.StartBranchingDialogue(willSkip, timelineFrameSkip ,cutsceneTimeline);
     }
 }

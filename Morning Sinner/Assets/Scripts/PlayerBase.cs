@@ -29,6 +29,8 @@ public class PlayerBase : MonoBehaviour
     Rigidbody rb;
     Animator animator;
 
+    public bool grabbing;
+
     //Instance variable
     public static PlayerBase instance;
     Vector3 positiveScale, negativeScale, lastMoveDirection;
@@ -57,11 +59,16 @@ public class PlayerBase : MonoBehaviour
         positiveScale = transform.localScale;
 
         animator = GetComponent<Animator>();
+        animator.SetFloat("Anim_Last_Move_Y", 1);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (DialogueLoader.instance.dialogueInProg)
+        {
+            return;
+        }
         checkForJump();
         checkForGrab();
         checkDirection();
@@ -191,8 +198,38 @@ public class PlayerBase : MonoBehaviour
     #region Utility Methods
     private void Animate()
     {
-        animator.SetFloat("Anim_Move_X", move.x);
-        animator.SetFloat("Anim_Move_Y", move.z);
+        if (!grabbing)
+        {
+            animator.SetBool("isGrabbing", false);
+            animator.SetFloat("Anim_Move_X", move.x);
+            animator.SetFloat("Anim_Move_Y", move.z);
+        }
+        else
+        {
+            animator.SetBool("isGrabbing", true);
+            if(transform.localScale.x > 0)
+            {
+                if(move.x < 0)
+                {
+                    animator.SetFloat("Anim_Push_Pull_X", -1);
+                }
+                else
+                {
+                    animator.SetFloat("Anim_Push_Pull_X", 1);
+                }
+            }
+            else
+            {
+                if(move.x < 0)
+                {
+                    animator.SetFloat("Anim_Push_Pull_X", 1);
+                }
+                else
+                {
+                    animator.SetFloat("Anim_Push_Pull_X", -1);
+                }
+            }
+        }
         animator.SetFloat("Anim_Move_Magnitude", move.magnitude);
         animator.SetFloat("Anim_Last_Move_X", lastMoveDirection.x);
         animator.SetFloat("Anim_Last_Move_Y", lastMoveDirection.z);

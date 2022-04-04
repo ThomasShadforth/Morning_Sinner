@@ -16,10 +16,10 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
     <GroupName>k__BackingField: OpeningStart
-    <Position>k__BackingField: {x: -452, y: -267}
+    <Position>k__BackingField: {x: 130, y: -267}
   - <ID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
     <GroupName>k__BackingField: ScreamAtHer
-    <Position>k__BackingField: {x: 2840, y: -810}
+    <Position>k__BackingField: {x: 2839.9998, y: -810}
   - <ID>k__BackingField: f73b36a6-f98d-4e6c-93a9-a2b47364eac0
     <GroupName>k__BackingField: CalmHerDown
     <Position>k__BackingField: {x: 2905, y: 138}
@@ -47,21 +47,6 @@ MonoBehaviour:
     <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
     <dialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 1167, y: -208}
-  - <ID>k__BackingField: aa0c4bbd-4eac-4f91-8a19-984189ec658f
-    <Name>k__BackingField: MaliciousIntent
-    <NameText>k__BackingField: Narrator
-    <Text>k__BackingField: 'Your heart cascades with panic, you look up
-
-      to
-      see an elderly woman clutching a rolling
-
-      pin with malicious intent.'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: b6edcfa3-c549-4830-8ae7-49e89aadc85e
-    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
-    <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: -171, y: 176}
   - <ID>k__BackingField: b6edcfa3-c549-4830-8ae7-49e89aadc85e
     <Name>k__BackingField: Bloodline
     <NameText>k__BackingField: Narrator
@@ -184,26 +169,6 @@ MonoBehaviour:
     <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
     <dialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 3489, y: -572}
-  - <ID>k__BackingField: 6b6ca66c-790d-465e-8c6a-beb4cddcda66
-    <Name>k__BackingField: ScreamNarrator
-    <NameText>k__BackingField: Narrator
-    <Text>k__BackingField: You both scream at increasing volumes
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: b031d1fb-a336-43f0-a754-a68c9ded8c40
-    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
-    <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 3802, y: -572}
-  - <ID>k__BackingField: b031d1fb-a336-43f0-a754-a68c9ded8c40
-    <Name>k__BackingField: ElderlyWomanWitch1
-    <NameText>k__BackingField: Elderly Woman
-    <Text>k__BackingField: WITCH!
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 75c78be8-ec39-45a2-8488-f34aaeb904b2
-    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
-    <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 4123, y: -738}
   - <ID>k__BackingField: 75c78be8-ec39-45a2-8488-f34aaeb904b2
     <Name>k__BackingField: NotAWitch
     <NameText>k__BackingField: Sina
@@ -280,32 +245,6 @@ MonoBehaviour:
     <GroupID>k__BackingField: 691834b1-a29e-41ff-81ed-6148a30443e6
     <dialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 5562, y: -68}
-  - <ID>k__BackingField: 6813321e-e133-4d29-abd8-2d0889c97aeb
-    <Name>k__BackingField: OpeningStart
-    <NameText>k__BackingField: Elderly Woman
-    <Text>k__BackingField: WHO IN THE HELLS ARE YOU?!!
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: aa0c4bbd-4eac-4f91-8a19-984189ec658f
-    <GroupID>k__BackingField: 5194526d-a5f9-4c46-a610-0f0a0c40d0e0
-    <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: -427, y: -208}
-  - <ID>k__BackingField: 1c39a516-2905-41d0-a34d-a0c1502ab4cd
-    <Name>k__BackingField: CutsceneStart
-    <NameText>k__BackingField: Narrator
-    <Text>k__BackingField: 'You begin to stir from what felt like an eternal slumber,
-
-      light
-      pours into the black craters surrounding your eyes,
-
-      the radiance is
-      soothing yet sensitive. It is strangely peaceful and so-'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 6813321e-e133-4d29-abd8-2d0889c97aeb
-    <GroupID>k__BackingField: 
-    <dialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: -907, y: -147}
   - <ID>k__BackingField: df86e582-6fd6-458a-9eff-51bfcfad67f5
     <Name>k__BackingField: SheLeaves
     <NameText>k__BackingField: Narrator
@@ -375,7 +314,7 @@ MonoBehaviour:
     <Text>k__BackingField: 'Onions, potatoes, and other curious lush vegetables
 
       are
-      temptingly left unguard for your eager hands.'
+      temptingly left unguarded for your eager hands.'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: f9ce7ee0-120a-40c6-ba42-c9e79c826184
@@ -411,13 +350,73 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <dialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: -333, y: 1439}
+  - <ID>k__BackingField: aa0c4bbd-4eac-4f91-8a19-984189ec658f
+    <Name>k__BackingField: MaliciousIntent
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'Your heart cascades with panic, you look up
+
+      to
+      see an elderly woman clutching a rolling
+
+      pin with malicious intent.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b6edcfa3-c549-4830-8ae7-49e89aadc85e
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -275, y: 179}
+  - <ID>k__BackingField: 1c39a516-2905-41d0-a34d-a0c1502ab4cd
+    <Name>k__BackingField: CutsceneStart
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: 'You begin to stir from what felt like an eternal slumber,
+
+      light
+      pours into the black craters surrounding your eyes,
+
+      the radiance is
+      soothing yet sensitive. It is strangely peaceful and so-'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 6813321e-e133-4d29-abd8-2d0889c97aeb
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -831, y: -208}
+  - <ID>k__BackingField: 6813321e-e133-4d29-abd8-2d0889c97aeb
+    <Name>k__BackingField: OpeningStart
+    <NameText>k__BackingField: Elderly Woman
+    <Text>k__BackingField: WHO IN THE HELLS ARE YOU?!!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -333, y: -208}
+  - <ID>k__BackingField: 6b6ca66c-790d-465e-8c6a-beb4cddcda66
+    <Name>k__BackingField: ScreamNarrator
+    <NameText>k__BackingField: Narrator
+    <Text>k__BackingField: You both scream at increasing volumes
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b031d1fb-a336-43f0-a754-a68c9ded8c40
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3793, y: -572}
+  - <ID>k__BackingField: b031d1fb-a336-43f0-a754-a68c9ded8c40
+    <Name>k__BackingField: ElderlyWomanWitch1
+    <NameText>k__BackingField: Elderly Woman
+    <Text>k__BackingField: WITCH!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 75c78be8-ec39-45a2-8488-f34aaeb904b2
+    <GroupID>k__BackingField: aab9c812-0b1b-4a2b-ba19-c95dc01938da
+    <dialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4087, y: -572}
   <OldGroupNames>k__BackingField:
   - OpeningStart
   - ScreamAtHer
   - CalmHerDown
   - CutsceneEnd
   <OldUngroupedNodeNames>k__BackingField:
-  - CutsceneStart
   - SheLeaves
   - DoorInteraction
   - TableInteraction
@@ -425,13 +424,15 @@ MonoBehaviour:
   - Ingredients
   - FoodWillHaveToComeLater
   - BucketInteraction
+  - MaliciousIntent
+  - CutsceneStart
+  - OpeningStart
   <OldGroupedNodeNames>k__BackingField:
     list:
     - Key: OpeningStart
       Value:
       - ICantRemember
       - AreYouDeaf
-      - MaliciousIntent
       - Bloodline
       - TellTheName
       - FailsToComeToMind
@@ -439,17 +440,16 @@ MonoBehaviour:
       - AWaveOfShock
       - ABloodyWitch
       - Disbelief
-      - OpeningStart
     - Key: ScreamAtHer
       Value:
       - SinaScreaming1
       - WomanScreaming1
       - SinaScreaming2
-      - ScreamNarrator
-      - ElderlyWomanWitch1
       - NotAWitch
       - ElderlyWomanWitch2
       - YoureAWitch
+      - ScreamNarrator
+      - ElderlyWomanWitch1
     - Key: CalmHerDown
       Value:
       - JumpToYourFeet

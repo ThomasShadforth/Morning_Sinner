@@ -36,6 +36,8 @@ public class DialogueLoader : MonoBehaviour
 
     PlayableDirector cutsceneTimelineDir;
 
+    bool skipsFrames;
+    int currentFrameToSkipTo;
     private void Awake()
     {
         //currentDialogue = startingDialogue;
@@ -63,12 +65,13 @@ public class DialogueLoader : MonoBehaviour
         currentDialogue = dialogueObject;
     }
 
-    public void StartBranchingDialogue(PlayableDirector cutsceneDirector = null)
+    public void StartBranchingDialogue(bool willSkip, int skipFrame, PlayableDirector cutsceneDirector = null)
     {
         if (cutsceneDirector != null)
         {
             cutsceneTimelineDir = cutsceneDirector;
             cutsceneTimelineDir.Pause();
+            currentFrameToSkipTo = skipFrame;
         }
 
         animator.SetBool("isOpen", true);
@@ -126,7 +129,15 @@ public class DialogueLoader : MonoBehaviour
 
     public void EndDialogue()
     {
-        cutsceneTimelineDir.Play();
+        if (cutsceneTimelineDir != null)
+        {
+            //set this to be at a specific point if it skips to a certain frame (Use a boolean)
+            if (skipsFrames)
+            {
+                cutsceneTimelineDir.time = currentFrameToSkipTo;
+            }
+            cutsceneTimelineDir.Play();
+        }
         animator.SetBool("isOpen", false);
         dialogueInProg = false;
     }

@@ -67,10 +67,11 @@ public class PlayerGrab : MonoBehaviour
                     {
                         heldObject.transform.localScale = setObjectScale(1f, heldObject.transform.localScale);
                     }
-
+                    heldObject.transform.rotation = new Quaternion(0, 0, 0, 0);
                     heldObject.transform.parent = playerHands.transform;
                     heldObject.GetComponent<GrabCube>().pickupObject();
                     isGrabbing = true;
+                    PlayerBase.instance.grabbing = true;
                     grabbedObjWeight = 50;
                 }
                 
@@ -85,8 +86,10 @@ public class PlayerGrab : MonoBehaviour
                 
                 heldObject.transform.parent = null;
                 heldObject.AddComponent<Rigidbody>();
+                heldObject.GetComponent<Rigidbody>().AddForce(new Vector3(2 * heldObject.transform.localScale.x, 0, 0), ForceMode.Impulse);
                 heldObject = null;
                 isGrabbing = false;
+                PlayerBase.instance.grabbing = false;
             }
         }
     }
@@ -118,7 +121,7 @@ public class PlayerGrab : MonoBehaviour
     Vector3 setObjectScale(float objectScalarX, Vector3 objectTransformScale)
     {
         Vector3 scalar = objectTransformScale;
-        scalar.x = scalar.x * objectScalarX;
+        scalar.x = 1 * objectScalarX;//scalar.x * objectScalarX;
         objectTransformScale = scalar;
         return scalar;
     }
