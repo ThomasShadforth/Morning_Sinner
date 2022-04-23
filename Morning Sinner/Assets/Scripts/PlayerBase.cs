@@ -72,7 +72,7 @@ public class PlayerBase : MonoBehaviour
         checkForJump();
         checkForGrab();
         checkDirection();
-        rb.velocity = new Vector3(move.x * moveSpeed, rb.velocity.y, move.z * moveSpeed);
+        rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);
         Animate();
 
     }
@@ -91,7 +91,7 @@ public class PlayerBase : MonoBehaviour
 
 
 
-        move = new Vector3(moveX, 0, moveZ).normalized;
+        move = ((transform.forward * moveZ * moveSpeed) + (transform.right * moveX * moveSpeed));
 
         
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44004565, g: 0.48854238, b: 0.5687362, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8eb488e6475e0aa40ba0dd65b305addd, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 7c34c4875d495c749b2b30cfef4f6ba0, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1063,6 +1063,8 @@ MonoBehaviour:
   selectedDialogue: {fileID: 0}
   DialogueSource: {fileID: 0}
   cutsceneTimeline: {fileID: 0}
+  timelineFrameSkip: 0
+  willSkip: 0
 --- !u!65 &393903177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2369,7 +2371,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.9987345, b: 0.995283, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2427,13 +2429,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.5471759, y: -0.21328674, z: 0.14661531, w: 0.7959971}
+  m_LocalPosition: {x: 0, y: 3, z: 1.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 69.01, y: -30, z: 0}
 --- !u!1 &741268304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3023,6 +3025,8 @@ MonoBehaviour:
   selectedDialogue: {fileID: 0}
   DialogueSource: {fileID: 0}
   cutsceneTimeline: {fileID: 0}
+  timelineFrameSkip: 0
+  willSkip: 0
 --- !u!1 &809290117
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,6 +3343,8 @@ MonoBehaviour:
   selectedDialogue: {fileID: 0}
   DialogueSource: {fileID: 0}
   cutsceneTimeline: {fileID: 0}
+  timelineFrameSkip: 0
+  willSkip: 0
 --- !u!1001 &865663616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4838,6 +4844,8 @@ MonoBehaviour:
   selectedDialogue: {fileID: 1188683947}
   DialogueSource: {fileID: 0}
   cutsceneTimeline: {fileID: 0}
+  timelineFrameSkip: 0
+  willSkip: 0
 --- !u!114 &1188683950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6514,6 +6522,8 @@ MonoBehaviour:
   selectedDialogue: {fileID: 0}
   DialogueSource: {fileID: 0}
   cutsceneTimeline: {fileID: 0}
+  timelineFrameSkip: 0
+  willSkip: 0
 --- !u!1 &1957164703
 GameObject:
   m_ObjectHideFlags: 0
