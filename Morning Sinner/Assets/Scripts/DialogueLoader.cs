@@ -120,7 +120,7 @@ public class DialogueLoader : MonoBehaviour
             PitchShiftDialogue();
             textUI.text += letter;
             _as.Play();
-            yield return new WaitForSeconds(.05f);
+            yield return new WaitForSeconds(.0377f);
             //_as.Stop();
         }
 

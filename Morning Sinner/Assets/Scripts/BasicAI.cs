@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum AI_States { 
     idle,
@@ -19,6 +20,7 @@ public class BasicAI : MonoBehaviour
 
     [SerializeField] Transform[] walkingPositions;
     public float minimumPositionDistance;
+    bool isCatching;
     int patrolIndex;
     public float waitTime;
     float waitTimer;
@@ -33,6 +35,11 @@ public class BasicAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isCatching)
+        {
+            return;
+        }
+
         DistanceCheck();
 
         if(state == AI_States.chase)
@@ -89,7 +96,29 @@ public class BasicAI : MonoBehaviour
 
         if(Vector3.Distance(transform.position, playerTarget.position) <= captureDistance)
         {
-            //Add the fail/game over condition
+            if (!isCatching)
+            {
+                isCatching = true;
+            }
+            DemoEnd();
         }
+    }
+
+    void DemoEnd()
+    {
+        StartCoroutine(DemoEndCo());
+    }
+
+    IEnumerator DemoEndCo()
+    {
+        UIFade.instance.fadeToBlack();
+        yield return new WaitForSeconds(1f);
+        ObjectCleanup.instance.CleanObjects();
+        SceneManager.LoadScene("Demo_End");
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, detectDistance);
     }
 }

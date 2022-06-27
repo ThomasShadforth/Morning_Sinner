@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,9 @@ public class PlayerGrab : MonoBehaviour
     [SerializeField] Transform playerHands;
     public LayerMask ObjectToGrab;
     GameObject heldObject;
-    
+    public ObjectHighlight highlightedObject;
+    public bool hittingObject;
+
     //PuzzleObject grabbedObj;
     // Start is called before the first frame update
     void Start()
@@ -25,9 +28,71 @@ public class PlayerGrab : MonoBehaviour
         Debug.DrawRay(playerHands.position, right, Color.red);
         checkForObjectGrab();
         checkForInteraction();
+
+        
+        checkForObjectUIHighlight();
         if (heldObject != null)
         {
             heldObject.transform.position = playerHands.transform.position;
+        }
+    }
+
+    private void checkForObjectUIHighlight()
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(playerHands.position, Vector3.right * rayDistance * transform.localScale.x);
+        GameObject hitObject;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            hitObject = hit.transform.gameObject;
+            
+            if(hitObject.GetComponent<ObjectHighlight>() || hitObject.GetComponentInChildren<ObjectHighlight>())
+            {
+                if(highlightedObject != null)
+                {
+                    highlightedObject.isLitUp = false;
+                    highlightedObject = null;
+                }
+
+                if (hitObject.GetComponent<ObjectHighlight>())
+                {
+                    hitObject.GetComponent<ObjectHighlight>().isLitUp = true;
+                    highlightedObject = hitObject.GetComponent<ObjectHighlight>();
+                } else if (hitObject.GetComponentInChildren<ObjectHighlight>())
+                {
+                    hitObject.GetComponentInChildren<ObjectHighlight>().isLitUp = true;
+                    highlightedObject = hitObject.GetComponentInChildren<ObjectHighlight>();
+                }
+
+                UIGrabText.instance.UIText.gameObject.SetActive(true);
+                setUIText(highlightedObject);
+            }
+            else
+            {
+                if(highlightedObject != null)
+                {
+                    highlightedObject.isLitUp = false;
+                    highlightedObject = null;
+                    hittingObject = false;
+                    UIGrabText.instance.UIText.gameObject.SetActive(false);
+                }
+                
+            }
+        }
+        
+
+    }
+
+    void setUIText(ObjectHighlight objectToHighlight)
+    {
+        if (objectToHighlight.type == objectType.Grabbable)
+        {
+            UIGrabText.instance.UIText.text = "Hold left mouse to grab object!";
+        }
+        else
+        {
+            UIGrabText.instance.UIText.text = "Right click to investigate!";
         }
     }
 

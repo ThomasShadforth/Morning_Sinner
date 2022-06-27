@@ -1,0 +1,7 @@
+Controls:
+
+WASD - Move
+Space - Jump
+Hold Left mouse - Grab objects from the side
+Right mouse - interact with narrative objects
+
